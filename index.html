@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tambun Trip Countdown 🎢</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #8ed8ff 0%, #dff7ff 55%, #fff1c7 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  color: #17324d;
+}
+
+.container {
+  width: 92%;
+  max-width: 600px;
+  text-align: center;
+  padding: 30px 18px;
+  position: relative;
+}
+
+.cloud {
+  position: fixed;
+  font-size: 55px;
+  opacity: 0.7;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.cloud1 {
+  top: 8%;
+  left: 5%;
+}
+
+.cloud2 {
+  top: 18%;
+  right: 4%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%,100% { transform: translateX(0); }
+  50% { transform: translateX(25px); }
+}
+
+.card {
+  background: rgba(255,255,255,0.92);
+  border-radius: 30px;
+  padding: 30px 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border: 4px solid white;
+}
+
+.small-title {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(42px, 12vw, 72px);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 0 25px;
+}
+
+.date {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.time-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px 4px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+}
+
+.number {
+  font-size: clamp(25px, 8vw, 42px);
+  font-weight: 900;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+
+.fun {
+  font-size: 40px;
+  margin: 25px 0 10px;
+  letter-spacing: 8px;
+}
+
+.message {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+.ride {
+  position: fixed;
+  bottom: 10px;
+  font-size: 45px;
+  animation: ride 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes ride {
+  from {
+    left: -80px;
+  }
+  to {
+    left: 110%;
+  }
+}
+
+.emoji {
+  position: fixed;
+  font-size: 28px;
+  animation: fall 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-100px) rotate(0deg);
+  }
+  to {
+    transform: translateY(
