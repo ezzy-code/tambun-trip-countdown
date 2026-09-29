@@ -7,6 +7,7 @@
 <title>Tambun × Cameron 2026</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -29,18 +30,25 @@ section {
     margin: auto;
 }
 
-/* HERO */
+
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
     min-height: 100vh;
     background:
-        linear-gradient(rgba(12,55,47,.78), rgba(12,55,47,.82)),
+        linear-gradient(rgba(12,55,47,.78), rgba(12,55,47,.84)),
         linear-gradient(135deg, #3d8270, #18352d);
+
     color: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     position: relative;
     overflow: hidden;
 }
@@ -49,6 +57,7 @@ section {
     position: absolute;
     font-size: 70px;
     opacity: .18;
+
     animation: floatCloud 25s linear infinite;
 }
 
@@ -64,8 +73,15 @@ section {
 }
 
 @keyframes floatCloud {
-    from { transform: translateX(0); }
-    to { transform: translateX(120vw); }
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(120vw);
+    }
+
 }
 
 .hero-content {
@@ -103,7 +119,10 @@ section {
     margin-bottom: 45px;
 }
 
-/* COUNTDOWN */
+
+/* =========================================
+   COUNTDOWN
+========================================= */
 
 .countdown-title {
     font-size: 14px;
@@ -121,10 +140,15 @@ section {
 
 .time-box {
     background: rgba(255,255,255,.12);
+
     border: 1px solid rgba(255,255,255,.25);
+
     border-radius: 16px;
+
     min-width: 90px;
+
     padding: 18px 12px;
+
     backdrop-filter: blur(8px);
 }
 
@@ -145,7 +169,14 @@ section {
     font-weight: bold;
 }
 
-/* JOURNEY */
+
+/* =========================================
+   JOURNEY
+========================================= */
+
+.journey-section {
+    background: #f5f1e8;
+}
 
 .section-title {
     text-align: center;
@@ -161,109 +192,307 @@ section {
     line-height: 1.6;
 }
 
-.route {
+.journey-map {
+    position: relative;
+
+    max-width: 900px;
+
+    margin: 70px auto 20px;
+
     display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    padding: 0 10px;
+}
+
+.road-line {
+    position: absolute;
+
+    top: 38px;
+
+    left: 7%;
+    right: 7%;
+
+    height: 6px;
+
+    border-radius: 10px;
+
+    background:
+        repeating-linear-gradient(
+            to right,
+            #18352d 0,
+            #18352d 20px,
+            transparent 20px,
+            transparent 35px
+        );
+
+    opacity: .25;
+}
+
+.journey-stop {
+    position: relative;
+
+    z-index: 2;
+
+    width: 130px;
+
+    text-align: center;
+
+    transition: transform .4s ease;
+}
+
+.stop-icon {
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+
+    font-size: 34px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.10);
+
+    border: 4px solid #dce6df;
+
+    transition: all .4s ease;
+}
+
+.stop-name {
     font-weight: bold;
     font-size: 18px;
 }
 
-.route-point {
-    padding: 14px 20px;
-    border-radius: 50px;
-    background: white;
-    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+.stop-label {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #71817a;
+
+    margin-top: 5px;
 }
 
-.arrow {
-    font-size: 25px;
+.journey-bus {
+    position: absolute;
+
+    z-index: 5;
+
+    top: -48px;
+
+    left: 5%;
+
+    font-size: 36px;
+
+    transform: translateX(-50%);
+
+    transition: left 1.2s ease;
+
+    filter:
+        drop-shadow(
+            0 5px 5px rgba(0,0,0,.18)
+        );
+
+    animation: busBounce 1s ease-in-out infinite;
 }
 
-/* DESTINATIONS */
+@keyframes busBounce {
+
+    0%, 100% {
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            translateY(-5px);
+    }
+
+}
+
+.journey-stop.active .stop-icon {
+
+    background: #f6c453;
+
+    border-color: #f6c453;
+
+    transform: scale(1.12);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+}
+
+.journey-stop.active .stop-name {
+    color: #18352d;
+}
+
+.journey-stop.completed .stop-icon {
+
+    background: #dcebe3;
+
+    border-color: #397563;
+}
+
+.journey-stop.completed .stop-label {
+    color: #397563;
+}
+
+
+/* =========================================
+   DESTINATIONS
+========================================= */
 
 .destinations {
     background: #e6eee9;
 }
 
 .destination-grid {
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 25px;
 }
 
 .destination {
+
     border-radius: 25px;
+
     padding: 35px;
+
     min-height: 300px;
+
     color: white;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: flex-end;
+
     overflow: hidden;
+
     position: relative;
 }
 
 .destination::before {
+
     content: "";
+
     position: absolute;
+
     inset: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,.65));
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.65)
+        );
 }
 
 .destination-content {
+
     position: relative;
+
     z-index: 2;
 }
 
 .tambun {
-    background: linear-gradient(145deg, #4ca68c, #14584b);
+
+    background:
+        linear-gradient(
+            145deg,
+            #4ca68c,
+            #14584b
+        );
 }
 
 .cameron {
-    background: linear-gradient(145deg, #7ca66b, #31583a);
+
+    background:
+        linear-gradient(
+            145deg,
+            #7ca66b,
+            #31583a
+        );
 }
 
 .destination-number {
+
     font-size: 12px;
+
     letter-spacing: 3px;
+
     margin-bottom: 8px;
+
     opacity: .8;
 }
 
 .destination h3 {
+
     font-size: 34px;
+
     margin-bottom: 8px;
 }
 
 .destination p {
+
     line-height: 1.6;
 }
 
-/* ITINERARY */
+
+/* =========================================
+   ITINERARY
+========================================= */
 
 .itinerary {
     background: #fffaf0;
 }
 
 .day {
+
     margin-bottom: 15px;
+
     border-radius: 18px;
+
     background: white;
-    box-shadow: 0 7px 22px rgba(0,0,0,.07);
+
+    box-shadow:
+        0 7px 22px rgba(0,0,0,.07);
+
     overflow: hidden;
 }
 
 .day summary {
+
     cursor: pointer;
+
     list-style: none;
+
     padding: 22px 25px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     font-weight: bold;
+
     font-size: 20px;
 }
 
@@ -272,8 +501,11 @@ section {
 }
 
 .day summary::after {
+
     content: "+";
+
     font-size: 28px;
+
     font-weight: normal;
 }
 
@@ -282,65 +514,104 @@ section {
 }
 
 .day-date {
+
     color: #75867f;
+
     font-size: 13px;
+
     letter-spacing: 1px;
+
     margin-bottom: 5px;
 }
 
 .events {
-    padding: 0 25px 25px;
+
+    padding:
+        0 25px 25px;
 }
 
 .event {
+
     display: grid;
-    grid-template-columns: 90px 1fr;
+
+    grid-template-columns:
+        90px 1fr;
+
     gap: 15px;
+
     padding: 15px 0;
-    border-top: 1px solid #edf0eb;
+
+    border-top:
+        1px solid #edf0eb;
 }
 
 .event-time {
+
     font-weight: bold;
+
     color: #397563;
 }
 
 .event-description {
+
     line-height: 1.5;
 }
 
 .event-description strong {
+
     display: block;
+
     color: #18352d;
 }
 
-/* PASS */
+
+/* =========================================
+   ADVENTURE PASS
+========================================= */
 
 .pass-section {
+
     background: #18352d;
+
     color: white;
 }
 
 .pass {
+
     max-width: 850px;
+
     margin: auto;
+
     background: #f6c453;
+
     color: #18352d;
+
     border-radius: 25px;
+
     padding: 35px;
+
     position: relative;
+
     overflow: hidden;
 }
 
 .pass::before,
 .pass::after {
+
     content: "";
+
     position: absolute;
+
     width: 35px;
+
     height: 35px;
+
     background: #18352d;
+
     border-radius: 50%;
+
     top: 50%;
+
     transform: translateY(-50%);
 }
 
@@ -353,11 +624,19 @@ section {
 }
 
 .pass-top {
+
     display: flex;
-    justify-content: space-between;
+
+    justify-content:
+        space-between;
+
     gap: 20px;
-    border-bottom: 2px dashed rgba(24,53,45,.35);
+
+    border-bottom:
+        2px dashed rgba(24,53,45,.35);
+
     padding-bottom: 25px;
+
     margin-bottom: 25px;
 }
 
@@ -366,37 +645,61 @@ section {
 }
 
 .pass-number {
+
     font-size: 12px;
+
     letter-spacing: 2px;
+
     text-align: right;
 }
 
 .pass-details {
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 20px;
 }
 
 .pass-detail small {
+
     display: block;
+
     font-size: 11px;
+
     letter-spacing: 2px;
+
     margin-bottom: 5px;
+
     opacity: .65;
 }
 
-/* FOOTER */
+
+/* =========================================
+   FOOTER
+========================================= */
 
 footer {
+
     background: #102923;
+
     color: white;
+
     text-align: center;
+
     padding: 35px 20px;
+
     font-size: 13px;
+
     opacity: .95;
 }
 
-/* MOBILE */
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 700px) {
 
@@ -413,14 +716,6 @@ footer {
         padding: 28px;
     }
 
-    .route {
-        flex-direction: column;
-    }
-
-    .arrow {
-        transform: rotate(90deg);
-    }
-
     .time-box {
         min-width: 72px;
         padding: 14px 8px;
@@ -430,18 +725,75 @@ footer {
         font-size: 28px;
     }
 
+    .journey-map {
+
+        margin-top: 60px;
+
+        padding: 0;
+    }
+
+    .journey-stop {
+        width: 75px;
+    }
+
+    .stop-icon {
+
+        width: 58px;
+        height: 58px;
+
+        font-size: 25px;
+
+        border-width: 3px;
+    }
+
+    .stop-name {
+        font-size: 14px;
+    }
+
+    .stop-label {
+
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+    .road-line {
+
+        top: 29px;
+
+        left: 10%;
+        right: 10%;
+
+        height: 4px;
+    }
+
+    .journey-bus {
+
+        top: -43px;
+
+        font-size: 28px;
+    }
+
     .day summary {
+
         font-size: 17px;
+
         padding: 19px;
     }
 
     .events {
-        padding: 0 19px 20px;
+
+        padding:
+            0 19px 20px;
     }
 
     .event {
-        grid-template-columns: 70px 1fr;
+
+        grid-template-columns:
+            70px 1fr;
+
         gap: 10px;
+
         font-size: 14px;
     }
 
@@ -461,18 +813,85 @@ footer {
         grid-template-columns: 1fr;
         gap: 15px;
     }
+
 }
+
+
+/* =========================================
+   EXTRA MOBILE HERO
+========================================= */
+
+@media (max-width: 450px) {
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .date {
+        font-size: 15px;
+    }
+
+    .countdown {
+        gap: 7px;
+    }
+
+    .time-box {
+        min-width: 65px;
+    }
+
+}
+
+
+/* =========================================
+   SCROLL ANIMATION
+========================================= */
+
+.destination,
+.day,
+.pass,
+.journey-stop {
+
+    animation:
+        fadeUp .7s ease both;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<!-- HERO -->
+
+<!-- =========================================
+     HERO
+========================================= -->
 
 <section class="hero">
 
     <div class="cloud cloud1">☁️</div>
+
     <div class="cloud cloud2">☁️</div>
+
 
     <div class="hero-content">
 
@@ -480,82 +899,213 @@ footer {
             3 FAMILIES • 1 ADVENTURE
         </div>
 
+
         <h1>
             TAMBUN <span>×</span><br>
             CAMERON
         </h1>
 
+
         <div class="subtitle">
             FAMILY ADVENTURE 2026
         </div>
+
 
         <div class="date">
             16 — 19 OCTOBER 2026
         </div>
 
-        <div id="countdownTitle" class="countdown-title">
+
+        <div
+            id="countdownTitle"
+            class="countdown-title">
+
             ADVENTURE STARTS IN
-        </div>
-
-        <div id="countdown" class="countdown">
-
-            <div class="time-box">
-                <strong id="days">0</strong>
-                <small>DAYS</small>
-            </div>
-
-            <div class="time-box">
-                <strong id="hours">0</strong>
-                <small>HOURS</small>
-            </div>
-
-            <div class="time-box">
-                <strong id="minutes">0</strong>
-                <small>MINUTES</small>
-            </div>
-
-            <div class="time-box">
-                <strong id="seconds">0</strong>
-                <small>SECONDS</small>
-            </div>
 
         </div>
 
-        <div id="status" class="status"></div>
+
+        <div
+            id="countdown"
+            class="countdown">
+
+
+            <div class="time-box">
+
+                <strong id="days">
+                    0
+                </strong>
+
+                <small>
+                    DAYS
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <strong id="hours">
+                    0
+                </strong>
+
+                <small>
+                    HOURS
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <strong id="minutes">
+                    0
+                </strong>
+
+                <small>
+                    MINUTES
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <strong id="seconds">
+                    0
+                </strong>
+
+                <small>
+                    SECONDS
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            id="status"
+            class="status">
+
+        </div>
 
     </div>
+
 </section>
 
 
-<!-- JOURNEY -->
 
-<section>
+<!-- =========================================
+     JOURNEY
+========================================= -->
+
+<section class="journey-section">
 
     <div class="container">
+
 
         <h2 class="section-title">
             THE JOURNEY
         </h2>
 
+
         <p class="section-subtitle">
             Four days, three families, two destinations and one big family adventure.
         </p>
 
-        <div class="route">
 
-            <div class="route-point">📍 Bangi</div>
+        <div class="journey-map">
 
-            <div class="arrow">→</div>
 
-            <div class="route-point">🌊 Tambun</div>
+            <div class="road-line"></div>
 
-            <div class="arrow">→</div>
 
-            <div class="route-point">🍓 Cameron</div>
+            <div
+                id="journeyBus"
+                class="journey-bus">
 
-            <div class="arrow">→</div>
+                🚐
 
-            <div class="route-point">🏠 KL</div>
+            </div>
+
+
+            <div
+                class="journey-stop"
+                id="stopBangi">
+
+                <div class="stop-icon">
+                    📍
+                </div>
+
+                <div class="stop-name">
+                    Bangi
+                </div>
+
+                <div class="stop-label">
+                    START
+                </div>
+
+            </div>
+
+
+            <div
+                class="journey-stop"
+                id="stopTambun">
+
+                <div class="stop-icon">
+                    🌊
+                </div>
+
+                <div class="stop-name">
+                    Tambun
+                </div>
+
+                <div class="stop-label">
+                    ADVENTURE
+                </div>
+
+            </div>
+
+
+            <div
+                class="journey-stop"
+                id="stopCameron">
+
+                <div class="stop-icon">
+                    🍓
+                </div>
+
+                <div class="stop-name">
+                    Cameron
+                </div>
+
+                <div class="stop-label">
+                    HIGHLANDS
+                </div>
+
+            </div>
+
+
+            <div
+                class="journey-stop"
+                id="stopKL">
+
+                <div class="stop-icon">
+                    🏠
+                </div>
+
+                <div class="stop-name">
+                    KL
+                </div>
+
+                <div class="stop-label">
+                    HOME
+                </div>
+
+            </div>
+
 
         </div>
 
@@ -564,21 +1114,28 @@ footer {
 </section>
 
 
-<!-- DESTINATIONS -->
+
+<!-- =========================================
+     DESTINATIONS
+========================================= -->
 
 <section class="destinations">
 
     <div class="container">
 
+
         <h2 class="section-title">
             TWO STOPS. ONE ADVENTURE.
         </h2>
+
 
         <p class="section-subtitle">
             From waterpark thrills in Tambun to cool mountain air and strawberries in Cameron Highlands.
         </p>
 
+
         <div class="destination-grid">
+
 
             <div class="destination tambun">
 
@@ -621,6 +1178,7 @@ footer {
 
             </div>
 
+
         </div>
 
     </div>
@@ -628,38 +1186,50 @@ footer {
 </section>
 
 
-<!-- ITINERARY -->
+
+<!-- =========================================
+     ITINERARY
+========================================= -->
 
 <section class="itinerary">
 
     <div class="container">
 
+
         <h2 class="section-title">
             THE ITINERARY
         </h2>
+
 
         <p class="section-subtitle">
             Tap each day to see what's happening.
         </p>
 
 
+
         <!-- DAY 1 -->
 
-        <details class="day" open>
+        <details
+            class="day"
+            open>
 
             <summary>
 
                 <div>
+
                     <div class="day-date">
                         FRIDAY • 16 OCTOBER
                     </div>
 
                     BANGI → TAMBUN
+
                 </div>
 
             </summary>
 
+
             <div class="events">
+
 
                 <div class="event">
 
@@ -668,11 +1238,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Breakfast</strong>
+
+                        <strong>
+                            Breakfast
+                        </strong>
+
                         Dbukit Bangi
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -682,11 +1258,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Depart for Tambun</strong>
+
+                        <strong>
+                            Depart for Tambun
+                        </strong>
+
                         Road trip begins!
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -696,11 +1278,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Check-in</strong>
+
+                        <strong>
+                            Check-in
+                        </strong>
+
                         Onsen
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -710,11 +1298,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Free Time</strong>
+
+                        <strong>
+                            Free Time
+                        </strong>
+
                         Relax and enjoy the resort.
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -724,15 +1318,22 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Dinner</strong>
+
+                        <strong>
+                            Dinner
+                        </strong>
+
                         Location to be decided
+
                     </div>
 
                 </div>
 
+
             </div>
 
         </details>
+
 
 
         <!-- DAY 2 -->
@@ -742,16 +1343,20 @@ footer {
             <summary>
 
                 <div>
+
                     <div class="day-date">
                         SATURDAY • 17 OCTOBER
                     </div>
 
                     LOST WORLD OF TAMBUN
+
                 </div>
 
             </summary>
 
+
             <div class="events">
+
 
                 <div class="event">
 
@@ -760,15 +1365,22 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Lost World of Tambun</strong>
+
+                        <strong>
+                            Lost World of Tambun
+                        </strong>
+
                         Waterpark and adventure activities with the family.
+
                     </div>
 
                 </div>
 
+
             </div>
 
         </details>
+
 
 
         <!-- DAY 3 -->
@@ -778,16 +1390,20 @@ footer {
             <summary>
 
                 <div>
+
                     <div class="day-date">
                         SUNDAY • 18 OCTOBER
                     </div>
 
                     TAMBUN → CAMERON
+
                 </div>
 
             </summary>
 
+
             <div class="events">
+
 
                 <div class="event">
 
@@ -796,11 +1412,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Checkout</strong>
+
+                        <strong>
+                            Checkout
+                        </strong>
+
                         Tambun
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -810,11 +1432,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Lunch</strong>
+
+                        <strong>
+                            Lunch
+                        </strong>
+
                         Location to be decided
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -824,11 +1452,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Depart for Cameron Highlands</strong>
+
+                        <strong>
+                            Depart for Cameron Highlands
+                        </strong>
+
                         Next stop: the highlands!
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -838,11 +1472,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Steamboat Dinner</strong>
+
+                        <strong>
+                            Steamboat Dinner
+                        </strong>
+
                         Warm food, cool weather.
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -852,15 +1492,22 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Tokyo Town</strong>
+
+                        <strong>
+                            Tokyo Town
+                        </strong>
+
                         Evening outing.
+
                     </div>
 
                 </div>
 
+
             </div>
 
         </details>
+
 
 
         <!-- DAY 4 -->
@@ -870,16 +1517,20 @@ footer {
             <summary>
 
                 <div>
+
                     <div class="day-date">
                         MONDAY • 19 OCTOBER
                     </div>
 
                     CAMERON HIGHLANDS
+
                 </div>
 
             </summary>
 
+
             <div class="events">
+
 
                 <div class="event">
 
@@ -888,11 +1539,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Breakfast</strong>
+
+                        <strong>
+                            Breakfast
+                        </strong>
+
                         KHM
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -902,11 +1559,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Taman Sedia</strong>
+
+                        <strong>
+                            Taman Sedia
+                        </strong>
+
                         Strawberry picking, Abg Strawberry, Opah Strawberry and scone hunting.
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -916,11 +1579,17 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Kea Farm</strong>
+
+                        <strong>
+                            Kea Farm
+                        </strong>
+
                         Strawberry chocolate, ice cream, sweet corn and lunch.
+
                     </div>
 
                 </div>
+
 
 
                 <div class="event">
@@ -930,32 +1599,46 @@ footer {
                     </div>
 
                     <div class="event-description">
-                        <strong>Depart for KL</strong>
+
+                        <strong>
+                            Depart for KL
+                        </strong>
+
                         Road trip home.
+
                     </div>
 
                 </div>
 
+
             </div>
 
         </details>
+
 
     </div>
 
 </section>
 
 
-<!-- ADVENTURE PASS -->
+
+<!-- =========================================
+     ADVENTURE PASS
+========================================= -->
 
 <section class="pass-section">
 
     <div class="container">
 
+
         <div class="pass">
+
 
             <div class="pass-top">
 
+
                 <div>
+
                     <div class="destination-number">
                         OFFICIAL FAMILY ADVENTURE PASS
                     </div>
@@ -963,34 +1646,61 @@ footer {
                     <h3>
                         TAMBUN × CAMERON
                     </h3>
+
                 </div>
+
 
                 <div class="pass-number">
+
                     TRIP 2026<br>
+
                     16—19 OCT
+
                 </div>
 
+
             </div>
+
 
 
             <div class="pass-details">
 
+
                 <div class="pass-detail">
-                    <small>CREW</small>
+
+                    <small>
+                        CREW
+                    </small>
+
                     3 Families
+
                 </div>
 
+
                 <div class="pass-detail">
-                    <small>DESTINATIONS</small>
+
+                    <small>
+                        DESTINATIONS
+                    </small>
+
                     Tambun + Cameron
+
                 </div>
 
+
                 <div class="pass-detail">
-                    <small>MISSION</small>
+
+                    <small>
+                        MISSION
+                    </small>
+
                     Have Fun!
+
                 </div>
+
 
             </div>
+
 
         </div>
 
@@ -999,130 +1709,221 @@ footer {
 </section>
 
 
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
 <footer>
 
-    TAMBUN × CAMERON 2026<br>
+    TAMBUN × CAMERON 2026
+
+    <br>
+
     3 Families • 1 Adventure
 
 </footer>
 
 
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
 
+
 /* =========================================
-   TRIP DATES — MALAYSIA TIME
+   TRIP DATES
 ========================================= */
 
-const departure = new Date("2026-10-16T08:00:00+08:00");
+const departure =
+    new Date(
+        "2026-10-16T08:00:00+08:00"
+    );
 
-const tambunEnd = new Date("2026-10-18T12:00:00+08:00");
 
-const tripEnd = new Date("2026-10-19T12:00:00+08:00");
+const tambunEnd =
+    new Date(
+        "2026-10-18T12:00:00+08:00"
+    );
+
+
+const tripEnd =
+    new Date(
+        "2026-10-19T12:00:00+08:00"
+    );
+
 
 
 /* =========================================
-   UPDATE HERO
+   HERO COUNTDOWN
 ========================================= */
 
 function updateTripStatus() {
 
-    const now = new Date();
+
+    const now =
+        new Date();
+
 
     const countdownTitle =
-        document.getElementById("countdownTitle");
+        document.getElementById(
+            "countdownTitle"
+        );
+
 
     const countdown =
-        document.getElementById("countdown");
+        document.getElementById(
+            "countdown"
+        );
+
 
     const status =
-        document.getElementById("status");
+        document.getElementById(
+            "status"
+        );
+
 
 
     /* BEFORE TRIP */
 
     if (now < departure) {
 
+
         countdownTitle.innerText =
             "ADVENTURE STARTS IN";
+
 
         countdown.style.display =
             "flex";
 
+
         status.innerText =
             "🚐 GET READY FOR THE ROAD TRIP!";
+
 
         const difference =
             departure - now;
 
+
         const days =
             Math.floor(
-                difference / (1000 * 60 * 60 * 24)
+                difference /
+                (1000 * 60 * 60 * 24)
             );
+
 
         const hours =
             Math.floor(
-                (difference / (1000 * 60 * 60)) % 24
+                (
+                    difference /
+                    (1000 * 60 * 60)
+                ) % 24
             );
+
 
         const minutes =
             Math.floor(
-                (difference / (1000 * 60)) % 60
+                (
+                    difference /
+                    (1000 * 60)
+                ) % 60
             );
+
 
         const seconds =
             Math.floor(
-                (difference / 1000) % 60
+                (
+                    difference /
+                    1000
+                ) % 60
             );
 
 
-        document.getElementById("days").innerText =
+        document.getElementById(
+            "days"
+        ).innerText =
             days;
 
-        document.getElementById("hours").innerText =
-            String(hours).padStart(2, "0");
 
-        document.getElementById("minutes").innerText =
-            String(minutes).padStart(2, "0");
+        document.getElementById(
+            "hours"
+        ).innerText =
+            String(hours)
+            .padStart(2, "0");
 
-        document.getElementById("seconds").innerText =
-            String(seconds).padStart(2, "0");
+
+        document.getElementById(
+            "minutes"
+        ).innerText =
+            String(minutes)
+            .padStart(2, "0");
+
+
+        document.getElementById(
+            "seconds"
+        ).innerText =
+            String(seconds)
+            .padStart(2, "0");
+
 
         return;
+
     }
+
 
 
     /* TAMBUN */
 
-    if (now >= departure && now < tambunEnd) {
+    if (
+        now >= departure &&
+        now < tambunEnd
+    ) {
+
 
         countdownTitle.innerText =
             "THE ADVENTURE IS ON!";
 
+
         countdown.style.display =
             "none";
+
 
         status.innerText =
             "🌊 WE'RE IN TAMBUN!";
 
+
         return;
+
     }
+
 
 
     /* CAMERON */
 
-    if (now >= tambunEnd && now < tripEnd) {
+    if (
+        now >= tambunEnd &&
+        now < tripEnd
+    ) {
+
 
         countdownTitle.innerText =
             "NEXT STOP";
 
+
         countdown.style.display =
             "none";
+
 
         status.innerText =
             "🍓 CAMERON HIGHLANDS!";
 
+
         return;
+
     }
+
 
 
     /* AFTER TRIP */
@@ -1130,8 +1931,10 @@ function updateTripStatus() {
     countdownTitle.innerText =
         "ADVENTURE COMPLETE";
 
+
     countdown.style.display =
         "none";
+
 
     status.innerText =
         "🏁 WHAT A TRIP!";
@@ -1139,13 +1942,218 @@ function updateTripStatus() {
 }
 
 
-/* UPDATE EVERY SECOND */
+
+/* =========================================
+   JOURNEY ANIMATION
+========================================= */
+
+function updateJourney() {
+
+
+    const now =
+        new Date();
+
+
+    const stops = {
+
+
+        bangi:
+            document.getElementById(
+                "stopBangi"
+            ),
+
+
+        tambun:
+            document.getElementById(
+                "stopTambun"
+            ),
+
+
+        cameron:
+            document.getElementById(
+                "stopCameron"
+            ),
+
+
+        kl:
+            document.getElementById(
+                "stopKL"
+            )
+
+    };
+
+
+    const bus =
+        document.getElementById(
+            "journeyBus"
+        );
+
+
+
+    /* RESET */
+
+    Object.values(stops)
+        .forEach(
+            stop => {
+
+                stop.classList.remove(
+                    "active"
+                );
+
+                stop.classList.remove(
+                    "completed"
+                );
+
+            }
+        );
+
+
+
+    /* BEFORE DEPARTURE */
+
+    if (
+        now < departure
+    ) {
+
+
+        stops.bangi
+            .classList.add(
+                "active"
+            );
+
+
+        bus.style.left =
+            "7%";
+
+
+        return;
+
+    }
+
+
+
+    /* TAMBUN */
+
+    if (
+        now >= departure &&
+        now < tambunEnd
+    ) {
+
+
+        stops.bangi
+            .classList.add(
+                "completed"
+            );
+
+
+        stops.tambun
+            .classList.add(
+                "active"
+            );
+
+
+        bus.style.left =
+            "36%";
+
+
+        return;
+
+    }
+
+
+
+    /* CAMERON */
+
+    if (
+        now >= tambunEnd &&
+        now < tripEnd
+    ) {
+
+
+        stops.bangi
+            .classList.add(
+                "completed"
+            );
+
+
+        stops.tambun
+            .classList.add(
+                "completed"
+            );
+
+
+        stops.cameron
+            .classList.add(
+                "active"
+            );
+
+
+        bus.style.left =
+            "67%";
+
+
+        return;
+
+    }
+
+
+
+    /* HOME */
+
+    stops.bangi
+        .classList.add(
+            "completed"
+        );
+
+
+    stops.tambun
+        .classList.add(
+            "completed"
+        );
+
+
+    stops.cameron
+        .classList.add(
+            "completed"
+        );
+
+
+    stops.kl
+        .classList.add(
+            "active"
+        );
+
+
+    bus.style.left =
+        "93%";
+
+}
+
+
+
+/* =========================================
+   START
+========================================= */
 
 updateTripStatus();
 
-setInterval(updateTripStatus, 1000);
+updateJourney();
+
+
+setInterval(
+    updateTripStatus,
+    1000
+);
+
+
+setInterval(
+    updateJourney,
+    1000
+);
+
 
 </script>
+
 
 </body>
 </html>
