@@ -2,25 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>TAMBUN × CAMERON 2026</title>
 
-<meta name="description" content="Tambun × Cameron 2026 — 3 Families • 1 Adventure">
+<meta name="theme-color" content="#0b2239">
+<meta name="description" content="3 Families • 1 Adventure — Tambun × Cameron 2026">
 
 <style>
 :root{
-  --green:#173f35;
-  --green2:#285b49;
-  --cream:#fffaf0;
-  --cream2:#f4ead5;
-  --gold:#d8a83e;
-  --gold2:#f3cf73;
-  --orange:#e87532;
-  --blue:#65b9df;
-  --dark:#16231f;
-  --white:#fff;
-  --shadow:0 18px 45px rgba(20,45,35,.16);
+  --navy:#0b2239;
+  --blue:#1479c9;
+  --cyan:#38c6e8;
+  --green:#16805a;
+  --lightgreen:#74d69f;
+  --cream:#fff9ed;
+  --white:#ffffff;
+  --dark:#17212b;
+  --muted:#66717d;
+  --gold:#f6c453;
+  --gold2:#ffdf7d;
+  --gold3:#b67b16;
+  --shadow:0 16px 40px rgba(0,0,0,.13);
   --radius:24px;
 }
 
@@ -35,15 +38,18 @@ html{
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   background:var(--cream);
   color:var(--dark);
   overflow-x:hidden;
 }
 
-button,
-summary{
+button{
   font:inherit;
+}
+
+section{
+  scroll-margin-top:70px;
 }
 
 /* =========================
@@ -51,150 +57,83 @@ summary{
 ========================= */
 
 .hero{
-  position:relative;
   min-height:100svh;
+  position:relative;
   overflow:hidden;
+  background:
+    linear-gradient(180deg,#0a2943 0%,#146b9d 48%,#53bfd2 100%);
+  color:white;
   display:flex;
   align-items:center;
   justify-content:center;
+  padding:70px 20px 100px;
   text-align:center;
-  color:white;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(16,60,53,.35),
-      rgba(15,63,51,.85)
-    ),
-    linear-gradient(135deg,#4c9e87,#173f35 70%);
   transition:background 1s ease;
 }
 
 .hero.cameron{
   background:
-    linear-gradient(
-      180deg,
-      rgba(38,91,67,.25),
-      rgba(18,61,48,.88)
-    ),
-    linear-gradient(135deg,#79b88b,#285b49 70%);
+    linear-gradient(180deg,#193e39 0%,#3f9272 50%,#a4d89b 100%);
 }
 
 .hero.complete{
   background:
-    linear-gradient(
-      180deg,
-      rgba(95,73,24,.15),
-      rgba(33,38,27,.92)
-    ),
-    linear-gradient(135deg,#c9a449,#173f35 72%);
+    linear-gradient(180deg,#33245d 0%,#6e4da0 55%,#f0bd63 100%);
 }
 
 .hero-content{
   position:relative;
   z-index:5;
-  width:min(900px,92%);
-  padding:60px 20px;
+  width:min(900px,100%);
 }
 
 .eyebrow{
-  display:inline-block;
-  padding:8px 15px;
-  border:1px solid rgba(255,255,255,.45);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.25);
+  backdrop-filter:blur(10px);
+  padding:8px 14px;
   border-radius:999px;
   font-size:.78rem;
-  font-weight:700;
-  letter-spacing:2px;
-  background:rgba(255,255,255,.12);
-  backdrop-filter:blur(8px);
-  margin-bottom:20px;
+  font-weight:800;
+  letter-spacing:.12em;
+  margin-bottom:18px;
 }
 
 .hero h1{
-  font-size:clamp(3rem,10vw,7.5rem);
-  line-height:.88;
-  letter-spacing:-5px;
-  font-weight:900;
-  text-shadow:0 8px 30px rgba(0,0,0,.2);
+  font-size:clamp(2.7rem,9vw,6rem);
+  line-height:.9;
+  letter-spacing:-.06em;
+  margin-bottom:16px;
 }
 
 .hero h1 span{
   display:block;
-  color:#f4d477;
+  font-size:.45em;
+  letter-spacing:.08em;
+  margin-top:14px;
+  opacity:.9;
 }
 
 .tagline{
-  margin-top:22px;
-  font-size:clamp(1rem,3vw,1.35rem);
+  font-size:1rem;
   font-weight:700;
-  letter-spacing:1px;
+  opacity:.9;
+  margin-bottom:30px;
 }
 
-.status-pill{
-  margin:28px auto 0;
-  width:max-content;
-  max-width:100%;
-  padding:9px 16px;
-  border-radius:999px;
-  background:rgba(0,0,0,.22);
-  border:1px solid rgba(255,255,255,.22);
-  font-size:.82rem;
-  font-weight:700;
-  backdrop-filter:blur(8px);
-}
-
-/* =========================
-   COUNTDOWN
-========================= */
-
-.countdown{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  max-width:600px;
-  margin:26px auto 0;
-}
-
-.time-box{
-  padding:16px 8px;
-  border-radius:18px;
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.2);
-  backdrop-filter:blur(10px);
-}
-
-.time-box strong{
-  display:block;
-  font-size:clamp(1.7rem,5vw,2.7rem);
-  line-height:1;
-}
-
-.time-box span{
-  display:block;
-  margin-top:7px;
-  font-size:.62rem;
-  letter-spacing:2px;
-  opacity:.8;
-  font-weight:700;
-}
-
-.countdown-label{
-  margin-top:13px;
-  font-size:.82rem;
-  opacity:.82;
-}
-
-/* =========================
-   HERO DECOR
-========================= */
+/* Clouds */
 
 .cloud{
   position:absolute;
-  width:140px;
-  height:45px;
-  border-radius:50px;
-  background:rgba(255,255,255,.12);
-  filter:blur(1px);
-  animation:cloudMove 24s linear infinite;
+  background:rgba(255,255,255,.18);
+  width:150px;
+  height:42px;
+  border-radius:999px;
+  filter:blur(.5px);
+  animation:cloudMove 28s linear infinite;
 }
 
 .cloud:before,
@@ -209,218 +148,280 @@ summary{
   width:65px;
   height:65px;
   left:25px;
-  bottom:10px;
+  bottom:5px;
 }
 
 .cloud:after{
-  width:80px;
-  height:80px;
-  right:18px;
-  bottom:8px;
+  width:85px;
+  height:85px;
+  right:20px;
+  bottom:2px;
 }
 
 .cloud.one{
-  top:14%;
-  left:-160px;
+  top:13%;
+  left:-180px;
+  animation-duration:32s;
 }
 
 .cloud.two{
   top:27%;
   left:-220px;
-  animation-delay:9s;
   transform:scale(.7);
+  animation-duration:42s;
+  animation-delay:-15s;
 }
 
 @keyframes cloudMove{
   from{transform:translateX(0)}
-  to{transform:translateX(calc(100vw + 400px))}
+  to{transform:translateX(calc(100vw + 450px))}
 }
+
+/* Floating hero icons */
+
+.hero-icon{
+  position:absolute;
+  font-size:2rem;
+  opacity:.5;
+  z-index:2;
+  animation:floatIcon 4s ease-in-out infinite;
+}
+
+.hero-icon:nth-child(1){
+  left:8%;
+  top:38%;
+}
+
+.hero-icon:nth-child(2){
+  right:10%;
+  top:31%;
+  animation-delay:-1s;
+}
+
+.hero-icon:nth-child(3){
+  left:16%;
+  bottom:24%;
+  animation-delay:-2s;
+}
+
+.hero-icon:nth-child(4){
+  right:17%;
+  bottom:29%;
+  animation-delay:-3s;
+}
+
+@keyframes floatIcon{
+  0%,100%{transform:translateY(0) rotate(-4deg)}
+  50%{transform:translateY(-12px) rotate(5deg)}
+}
+
+/* Countdown */
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  max-width:560px;
+  margin:0 auto 22px;
+}
+
+.time-box{
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.25);
+  backdrop-filter:blur(12px);
+  border-radius:18px;
+  padding:15px 8px;
+}
+
+.time-number{
+  display:block;
+  font-size:clamp(1.7rem,6vw,3rem);
+  font-weight:900;
+  line-height:1;
+}
+
+.time-label{
+  display:block;
+  font-size:.65rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-top:7px;
+  opacity:.75;
+}
+
+.status-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 15px;
+  border-radius:999px;
+  background:rgba(0,0,0,.2);
+  font-size:.8rem;
+  font-weight:800;
+}
+
+.status-dot{
+  width:8px;
+  height:8px;
+  background:#7dff9b;
+  border-radius:50%;
+  box-shadow:0 0 0 0 rgba(125,255,155,.7);
+  animation:pulseDot 1.8s infinite;
+}
+
+@keyframes pulseDot{
+  0%{box-shadow:0 0 0 0 rgba(125,255,155,.7)}
+  70%{box-shadow:0 0 0 9px rgba(125,255,155,0)}
+  100%{box-shadow:0 0 0 0 rgba(125,255,155,0)}
+}
+
+/* Decorative hills */
 
 .hills{
   position:absolute;
-  bottom:-30px;
-  left:-5%;
-  width:110%;
-  height:190px;
-  background:#173f35;
-  border-radius:50% 50% 0 0;
-  opacity:.9;
-}
-
-.hills:before{
-  content:"";
-  position:absolute;
-  left:-10%;
-  bottom:0;
-  width:70%;
-  height:150px;
-  background:#285b49;
-  border-radius:60% 60% 0 0;
-}
-
-.hills:after{
-  content:"";
-  position:absolute;
-  right:-10%;
-  bottom:0;
-  width:70%;
+  bottom:-2px;
+  left:0;
+  width:100%;
   height:130px;
-  background:#214c40;
-  border-radius:60% 60% 0 0;
+  background:#07506b;
+  clip-path:polygon(
+    0 65%,8% 48%,15% 62%,23% 32%,31% 55%,
+    40% 37%,48% 60%,58% 28%,68% 53%,76% 38%,
+    85% 59%,93% 34%,100% 51%,100% 100%,0 100%
+  );
+  opacity:.85;
 }
 
-.floating{
-  position:absolute;
-  z-index:2;
-  pointer-events:none;
-  opacity:.7;
-  animation:float 5s ease-in-out infinite;
-}
-
-.float-water{
-  right:10%;
-  top:30%;
-  font-size:2rem;
-}
-
-.float-leaf{
-  left:8%;
-  bottom:24%;
-  font-size:2.2rem;
-  animation-delay:1s;
-}
-
-.float-strawberry{
-  right:14%;
-  bottom:25%;
-  font-size:2rem;
-  animation-delay:2s;
-}
-
-@keyframes float{
-  0%,100%{transform:translateY(0) rotate(-3deg)}
-  50%{transform:translateY(-14px) rotate(4deg)}
+.hero.cameron .hills{
+  background:#245b45;
 }
 
 /* =========================
-   SECTIONS
+   GENERAL
 ========================= */
 
-section{
-  padding:80px 20px;
-}
-
 .container{
-  width:min(1100px,94%);
+  width:min(1100px,calc(100% - 32px));
   margin:auto;
 }
 
-.section-heading{
+.section{
+  padding:70px 0;
+}
+
+.section-header{
   text-align:center;
-  margin-bottom:40px;
+  margin-bottom:34px;
 }
 
-.section-heading small{
-  display:block;
-  color:var(--orange);
-  font-size:.75rem;
+.kicker{
+  color:var(--blue);
+  text-transform:uppercase;
+  font-size:.72rem;
+  letter-spacing:.16em;
   font-weight:900;
-  letter-spacing:2px;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
-.section-heading h2{
-  font-size:clamp(2rem,6vw,3.6rem);
+.section-header h2{
+  font-size:clamp(2rem,6vw,3.5rem);
   line-height:1;
-  color:var(--green);
+  letter-spacing:-.04em;
 }
 
-.section-heading p{
-  margin:14px auto 0;
-  max-width:650px;
-  color:#68756f;
-  line-height:1.6;
+.section-header p{
+  margin-top:12px;
+  color:var(--muted);
 }
 
 /* =========================
-   LIVE DASHBOARD
+   DASHBOARD
 ========================= */
 
 .dashboard{
+  background:white;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  padding:25px;
   margin-top:-45px;
   position:relative;
   z-index:10;
 }
 
-.dashboard-card{
-  background:white;
-  border-radius:28px;
-  padding:25px;
-  box-shadow:var(--shadow);
-  border:1px solid rgba(23,63,53,.08);
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:20px;
 }
 
-.dashboard-top{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  align-items:center;
+.live-card{
+  background:linear-gradient(135deg,#0c2940,#155c84);
+  color:white;
+  border-radius:22px;
+  padding:25px;
+  position:relative;
+  overflow:hidden;
+}
+
+.live-card:after{
+  content:"✨";
+  position:absolute;
+  right:20px;
+  top:18px;
+  font-size:2rem;
+  animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+  0%,100%{opacity:.3;transform:scale(.8)}
+  50%{opacity:1;transform:scale(1.15)}
 }
 
 .live-label{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:.72rem;
+  font-size:.7rem;
   font-weight:900;
-  letter-spacing:1.5px;
-  color:#728078;
+  letter-spacing:.14em;
+  opacity:.7;
+  text-transform:uppercase;
 }
 
-.live-dot{
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:#42b883;
-  box-shadow:0 0 0 5px rgba(66,184,131,.13);
-  animation:pulse 1.8s infinite;
+.live-card h3{
+  font-size:1.8rem;
+  margin:8px 0;
 }
 
-@keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.25)}
-}
-
-.dashboard-status{
-  margin-top:10px;
-  font-size:clamp(1.4rem,4vw,2rem);
-  font-weight:900;
-  color:var(--green);
+.live-card p{
+  opacity:.8;
+  line-height:1.5;
 }
 
 .next-card{
-  margin-top:20px;
-  padding:18px;
-  border-radius:20px;
-  background:linear-gradient(135deg,#f8f1dd,#fffaf0);
-  border:1px solid #ead8ad;
+  background:#fff8e2;
+  border-radius:22px;
+  padding:25px;
+  border:1px solid #f2dfab;
 }
 
-.next-card small{
-  color:#9a7b35;
-  font-weight:900;
-  letter-spacing:1px;
+.next-icon{
+  font-size:2.5rem;
+  display:inline-block;
+  animation:bob 2.5s ease-in-out infinite;
+}
+
+@keyframes bob{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
 }
 
 .next-card h3{
-  margin-top:5px;
-  font-size:1.35rem;
+  margin:5px 0;
+  font-size:1.45rem;
 }
 
-.next-card p{
-  margin-top:5px;
-  color:#69756f;
-  line-height:1.5;
+.next-time{
+  color:#9a6a0b;
+  font-size:.8rem;
+  font-weight:900;
 }
 
 /* =========================
@@ -429,83 +430,82 @@ section{
 
 .journey-wrap{
   position:relative;
-  padding:30px 0 15px;
+  padding:20px 0 10px;
 }
 
 .route-line{
   position:absolute;
-  top:63px;
-  left:7%;
-  right:7%;
-  height:5px;
-  border-radius:10px;
-  background:#d9dfd9;
+  top:70px;
+  left:10%;
+  right:10%;
+  height:6px;
+  background:#d8e0e4;
+  border-radius:20px;
+  overflow:hidden;
 }
 
 .route-progress{
-  position:absolute;
-  top:63px;
-  left:7%;
   width:0%;
-  height:5px;
-  border-radius:10px;
-  background:linear-gradient(90deg,#e3b94d,#d88a36);
+  height:100%;
+  background:linear-gradient(90deg,var(--cyan),var(--green));
   transition:width 1s ease;
 }
 
 .bus{
   position:absolute;
-  top:25px;
-  left:7%;
+  top:36px;
+  left:8%;
   font-size:2rem;
   z-index:3;
   transition:left 1s ease;
-  filter:drop-shadow(0 5px 6px rgba(0,0,0,.15));
+  filter:drop-shadow(0 5px 4px rgba(0,0,0,.15));
   cursor:pointer;
+  animation:busBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes busBounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
 }
 
 .stops{
-  position:relative;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:10px;
+  position:relative;
+  z-index:2;
 }
 
 .stop{
   text-align:center;
 }
 
-.stop-dot{
-  width:30px;
-  height:30px;
-  margin:23px auto 15px;
-  border-radius:50%;
+.stop-icon{
+  width:58px;
+  height:58px;
   background:white;
-  border:5px solid #d9dfd9;
-  position:relative;
-  z-index:2;
+  border:4px solid #d8e0e4;
+  border-radius:50%;
+  margin:0 auto 12px;
+  display:grid;
+  place-items:center;
+  font-size:1.5rem;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
   transition:.3s;
 }
 
-.stop.active .stop-dot{
-  border-color:var(--gold);
-  box-shadow:0 0 0 7px rgba(216,168,62,.14);
-}
-
-.stop.done .stop-dot{
-  background:var(--gold);
-  border-color:var(--gold);
+.stop.active .stop-icon{
+  border-color:var(--green);
+  transform:scale(1.12);
+  box-shadow:0 0 0 8px rgba(22,128,90,.1);
 }
 
 .stop strong{
   display:block;
-  color:var(--green);
+  font-size:.85rem;
 }
 
 .stop small{
-  color:#7a867f;
-  display:block;
-  margin-top:4px;
+  color:var(--muted);
 }
 
 /* =========================
@@ -519,64 +519,117 @@ section{
 }
 
 .destination{
-  min-height:300px;
   position:relative;
-  overflow:hidden;
+  min-height:350px;
   border-radius:30px;
-  padding:28px;
-  color:white;
+  overflow:hidden;
   cursor:pointer;
-  transition:.35s;
   box-shadow:var(--shadow);
+  transition:transform .3s ease;
 }
 
 .destination:hover{
-  transform:translateY(-7px);
-}
-
-.destination:active{
-  transform:scale(.98);
+  transform:translateY(-5px);
 }
 
 .destination.tambun{
-  background:
-    radial-gradient(circle at 85% 20%,rgba(255,255,255,.22),transparent 25%),
-    linear-gradient(145deg,#299eaa,#16645e);
+  background:linear-gradient(160deg,#0578aa,#31c7d0 55%,#0a7e61);
 }
 
 .destination.cameron{
-  background:
-    radial-gradient(circle at 80% 15%,rgba(255,255,255,.22),transparent 25%),
-    linear-gradient(145deg,#77a96b,#285b49);
+  background:linear-gradient(160deg,#245e47,#6fb879 55%,#c6df91);
 }
 
-.destination .emoji{
-  font-size:3rem;
-}
-
-.destination h3{
-  margin-top:18px;
-  font-size:2rem;
-}
-
-.destination p{
-  margin-top:10px;
-  max-width:430px;
-  line-height:1.6;
-  opacity:.9;
-}
-
-.destination-badge{
+.destination-bg-icon{
   position:absolute;
-  right:20px;
-  top:20px;
-  padding:7px 11px;
-  border-radius:999px;
-  background:rgba(255,255,255,.15);
-  border:1px solid rgba(255,255,255,.22);
-  font-size:.7rem;
-  font-weight:900;
-  letter-spacing:1px;
+  font-size:8rem;
+  opacity:.18;
+  right:-10px;
+  top:5px;
+  animation:slowFloat 5s ease-in-out infinite;
+}
+
+@keyframes slowFloat{
+  0%,100%{transform:translateY(0) rotate(-3deg)}
+  50%{transform:translateY(-14px) rotate(3deg)}
+}
+
+.destination-content{
+  position:absolute;
+  inset:auto 0 0;
+  background:rgba(255,255,255,.96);
+  color:var(--dark);
+  padding:25px;
+  border-radius:25px 25px 0 0;
+}
+
+.destination-content h3{
+  font-size:1.8rem;
+}
+
+.destination-content p{
+  color:var(--muted);
+  margin-top:5px;
+}
+
+.activity-icons{
+  display:flex;
+  gap:8px;
+  margin-top:16px;
+  flex-wrap:wrap;
+}
+
+.activity-icon{
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  background:#f0f3f5;
+  border-radius:12px;
+  transition:.25s;
+}
+
+.activity-icon:hover{
+  transform:translateY(-4px) rotate(4deg);
+}
+
+/* Water bubbles */
+
+.bubble{
+  position:absolute;
+  bottom:40%;
+  width:12px;
+  height:12px;
+  border:2px solid rgba(255,255,255,.6);
+  border-radius:50%;
+  animation:bubbleRise 4s ease-in infinite;
+}
+
+.bubble.b1{left:15%;animation-delay:0s}
+.bubble.b2{left:35%;animation-delay:1.3s}
+.bubble.b3{left:65%;animation-delay:2.1s}
+.bubble.b4{left:80%;animation-delay:.7s}
+
+@keyframes bubbleRise{
+  from{transform:translateY(30px);opacity:0}
+  30%{opacity:1}
+  to{transform:translateY(-150px);opacity:0}
+}
+
+/* Strawberries */
+
+.strawberry{
+  position:absolute;
+  font-size:2.2rem;
+  animation:berryFloat 3.5s ease-in-out infinite;
+}
+
+.strawberry.s1{right:15%;top:20%}
+.strawberry.s2{right:30%;top:40%;animation-delay:-1.2s}
+
+@keyframes berryFloat{
+  0%,100%{transform:translateY(0) rotate(-5deg)}
+  50%{transform:translateY(-10px) rotate(6deg)}
 }
 
 /* =========================
@@ -589,11 +642,10 @@ section{
 }
 
 .day{
-  border-radius:22px;
   background:white;
-  box-shadow:0 8px 25px rgba(20,45,35,.08);
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,.07);
   overflow:hidden;
-  border:1px solid #e7ece7;
 }
 
 .day summary{
@@ -602,7 +654,6 @@ section{
   padding:20px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
   gap:15px;
 }
 
@@ -610,359 +661,244 @@ section{
   display:none;
 }
 
-.day-left{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
 .day-number{
-  min-width:52px;
-  height:52px;
+  width:46px;
+  height:46px;
+  border-radius:15px;
+  background:#eef3f5;
   display:grid;
   place-items:center;
-  border-radius:15px;
-  background:#edf3ed;
-  color:var(--green);
   font-weight:900;
+  flex:none;
 }
 
 .day.current .day-number{
-  background:var(--gold);
-  color:#fff;
+  background:#d9f4e6;
+  color:#087249;
+}
+
+.day-title{
+  flex:1;
 }
 
 .day-title strong{
   display:block;
-  color:var(--green);
 }
 
-.day-title small{
-  display:block;
-  margin-top:4px;
-  color:#849089;
+.day-title span{
+  color:var(--muted);
+  font-size:.78rem;
 }
 
-.day-badge{
-  padding:7px 10px;
-  border-radius:999px;
-  font-size:.65rem;
-  font-weight:900;
-  letter-spacing:.8px;
-  background:#eef1ef;
-  color:#748078;
-  white-space:nowrap;
+.day-arrow{
+  transition:.3s;
 }
 
-.day.current{
-  border-color:#e1bd63;
-  box-shadow:0 10px 30px rgba(216,168,62,.14);
+.day[open] .day-arrow{
+  transform:rotate(180deg);
 }
 
-.day.current .day-badge{
-  background:#f7e7b5;
-  color:#916f1c;
-}
-
-.day-content{
+.activities{
   padding:0 20px 20px;
 }
 
 .activity{
+  display:grid;
+  grid-template-columns:42px 1fr auto;
+  gap:12px;
+  align-items:center;
+  padding:14px 0;
+  border-top:1px solid #edf0f2;
   position:relative;
-  padding:14px 0 14px 25px;
-  border-top:1px solid #edf0ed;
 }
 
-.activity:before{
-  content:"";
-  position:absolute;
-  left:4px;
-  top:21px;
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:#ccd5cf;
+.activity-icon-big{
+  width:38px;
+  height:38px;
+  background:#f2f5f6;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  font-size:1.15rem;
 }
 
-.activity.now:before{
-  background:var(--orange);
-  box-shadow:0 0 0 6px rgba(232,117,50,.12);
-  animation:pulse 1.6s infinite;
+.activity.now .activity-icon-big{
+  background:#d9f4e6;
+  animation:activityPulse 1.8s infinite;
 }
 
-.activity.done:before{
-  background:#6e9d7e;
+@keyframes activityPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.08)}
 }
 
-.activity-time{
-  font-size:.7rem;
-  color:#8b9690;
-  font-weight:900;
-  letter-spacing:.7px;
-}
-
-.activity h4{
-  margin-top:4px;
-  color:var(--green);
-}
-
-.activity p{
-  margin-top:4px;
-  color:#6e7b74;
+.activity-info strong{
+  display:block;
   font-size:.9rem;
-  line-height:1.5;
+}
+
+.activity-info span{
+  color:var(--muted);
+  font-size:.75rem;
 }
 
 .activity-status{
-  display:inline-block;
-  margin-top:7px;
-  padding:4px 7px;
-  border-radius:6px;
-  font-size:.58rem;
+  font-size:.62rem;
   font-weight:900;
-  background:#eef1ef;
-  color:#7b867f;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#eef1f2;
+  color:#68737b;
 }
 
 .activity.now .activity-status{
-  background:#fff0e8;
-  color:#c55e22;
+  background:#d9f4e6;
+  color:#087249;
 }
 
 .activity.next .activity-status{
-  background:#f8edc9;
-  color:#987522;
+  background:#fff0c8;
+  color:#91620a;
 }
 
 /* =========================
-   GOLD ADVENTURE PASS
+   ADVENTURE PASS
 ========================= */
 
 .pass-section{
-  background:
-    radial-gradient(circle at 20% 20%,rgba(216,168,62,.12),transparent 28%),
-    linear-gradient(180deg,#f8f1df,#fffaf0);
+  background:#102b3f;
+  color:white;
 }
 
-.ticket{
-  position:relative;
-  width:min(900px,100%);
+.pass-section .kicker{
+  color:var(--gold);
+}
+
+.pass{
+  max-width:850px;
   margin:auto;
-  display:grid;
-  grid-template-columns:1fr 190px;
-  min-height:280px;
-  border-radius:24px;
+  position:relative;
+  border-radius:28px;
   overflow:hidden;
   background:
-    linear-gradient(
-      135deg,
-      #b98219 0%,
-      #f2cf6a 18%,
-      #c9992e 42%,
-      #f5d778 68%,
-      #b98219 100%
-    );
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.3),transparent 18%),
+    linear-gradient(135deg,#f3c44e,#ffdf7d 45%,#c58a20);
+  color:#4c3307;
+  padding:32px;
   box-shadow:
-    0 24px 55px rgba(109,78,15,.28),
-    inset 0 1px 0 rgba(255,255,255,.65);
-  color:#3f2b0a;
-  transform:rotate(-.3deg);
-  transition:.35s ease;
+    0 25px 60px rgba(0,0,0,.3),
+    inset 0 0 0 2px rgba(255,255,255,.5);
+  cursor:pointer;
+  transition:transform .3s ease;
 }
 
-.ticket:hover{
-  transform:rotate(0deg) translateY(-5px);
-  box-shadow:
-    0 30px 65px rgba(109,78,15,.32),
-    inset 0 1px 0 rgba(255,255,255,.65);
+.pass:hover{
+  transform:translateY(-5px) rotate(-.3deg);
 }
 
-.ticket:before,
-.ticket:after{
+.pass:after{
   content:"";
   position:absolute;
-  z-index:5;
-  top:50%;
-  width:30px;
-  height:30px;
-  background:#f8f1df;
-  border-radius:50%;
-  transform:translateY(-50%);
+  top:0;
+  bottom:0;
+  left:67%;
+  border-left:2px dashed rgba(82,53,0,.35);
 }
 
-.ticket:before{
-  left:-15px;
-}
-
-.ticket:after{
-  right:175px;
-}
-
-.ticket-main{
-  padding:30px 35px;
-  position:relative;
-}
-
-.ticket-main:before{
-  content:"";
+.pass-shine{
   position:absolute;
-  inset:10px;
-  border:1px solid rgba(84,55,5,.22);
-  border-radius:17px;
-  pointer-events:none;
+  inset:-100%;
+  background:linear-gradient(
+    110deg,
+    transparent 35%,
+    rgba(255,255,255,.4) 45%,
+    transparent 55%
+  );
+  animation:shine 5s infinite;
 }
 
-.ticket-brand{
+@keyframes shine{
+  0%{transform:translateX(-30%)}
+  35%,100%{transform:translateX(60%)}
+}
+
+.pass-top{
   position:relative;
   z-index:2;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:15px;
+  margin-bottom:30px;
 }
 
-.ticket-logo{
-  font-weight:1000;
-  letter-spacing:2px;
-  font-size:.75rem;
-}
-
-.ticket-admit{
-  font-size:.62rem;
+.pass-small{
+  font-size:.65rem;
+  letter-spacing:.16em;
   font-weight:900;
-  letter-spacing:1.5px;
-  padding:6px 9px;
-  border:1px solid rgba(63,43,10,.35);
-  border-radius:5px;
 }
 
-.ticket-title{
+.pass-admit{
+  font-size:.7rem;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+
+.pass-main{
   position:relative;
   z-index:2;
-  margin-top:28px;
-  font-size:clamp(2rem,6vw,4rem);
+  padding-right:32%;
+}
+
+.pass-main h3{
+  font-size:clamp(2rem,7vw,4rem);
   line-height:.9;
-  font-weight:1000;
-  letter-spacing:-2px;
+  letter-spacing:-.06em;
 }
 
-.ticket-title span{
-  display:block;
+.pass-main p{
+  margin-top:14px;
+  font-weight:800;
+  letter-spacing:.08em;
 }
 
-.ticket-subtitle{
-  position:relative;
-  z-index:2;
-  margin-top:12px;
-  font-size:.82rem;
-  font-weight:900;
-  letter-spacing:2px;
-}
-
-.ticket-info{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+.pass-details{
   margin-top:28px;
-}
-
-.ticket-info div{
-  border-top:1px solid rgba(63,43,10,.3);
-  padding-top:9px;
-}
-
-.ticket-info small{
-  display:block;
-  font-size:.55rem;
-  font-weight:900;
-  letter-spacing:1px;
-  opacity:.65;
-}
-
-.ticket-info strong{
-  display:block;
-  margin-top:3px;
-  font-size:.8rem;
-}
-
-.ticket-side{
-  position:relative;
   display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:25px;
-  border-left:2px dashed rgba(63,43,10,.38);
-  background:rgba(255,235,157,.2);
+  flex-wrap:wrap;
+  gap:15px;
 }
 
-.ticket-side-content{
-  text-align:center;
-  transform:rotate(90deg);
-  width:210px;
+.pass-detail{
+  font-size:.72rem;
+  font-weight:800;
 }
 
-.ticket-side .pass-word{
-  font-size:2rem;
-  font-weight:1000;
-  letter-spacing:5px;
-}
-
-.ticket-side small{
-  display:block;
-  margin-top:7px;
-  font-size:.58rem;
-  font-weight:900;
-  letter-spacing:1.5px;
-}
-
-.ticket-stamp{
+.stamp{
   position:absolute;
-  right:28px;
-  bottom:24px;
-  width:90px;
-  height:90px;
-  border:3px double rgba(63,43,10,.45);
+  z-index:3;
+  right:7%;
+  top:50%;
+  transform:translateY(-50%) rotate(9deg);
+  width:125px;
+  height:125px;
+  border:4px solid rgba(84,54,0,.55);
   border-radius:50%;
   display:grid;
   place-items:center;
   text-align:center;
-  font-size:.58rem;
-  line-height:1.25;
-  font-weight:1000;
-  transform:rotate(-12deg);
-  opacity:.72;
+  font-size:.65rem;
+  font-weight:900;
+  letter-spacing:.08em;
 }
 
-.ticket-shine{
-  position:absolute;
-  top:-80%;
-  left:-20%;
-  width:25%;
-  height:260%;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.35),
-    transparent
-  );
-  transform:rotate(20deg);
-  animation:shine 6s ease-in-out infinite;
-  pointer-events:none;
-}
-
-@keyframes shine{
-  0%,55%{left:-30%}
-  75%,100%{left:130%}
-}
-
-.pass-note{
-  text-align:center;
-  margin-top:18px;
-  color:#8a7a55;
-  font-size:.78rem;
+.stamp-inner{
+  border:1px solid rgba(84,54,0,.5);
+  border-radius:50%;
+  width:95px;
+  height:95px;
+  display:grid;
+  place-items:center;
+  padding:15px;
 }
 
 /* =========================
@@ -970,20 +906,22 @@ section{
 ========================= */
 
 footer{
-  background:#173f35;
+  background:#071b2a;
   color:white;
   text-align:center;
-  padding:55px 20px 90px;
+  padding:45px 20px 100px;
 }
 
-footer h3{
-  font-size:1.4rem;
+footer strong{
+  display:block;
+  font-size:1.1rem;
 }
 
-footer p{
-  margin-top:8px;
-  opacity:.65;
-  font-size:.8rem;
+footer span{
+  display:block;
+  margin-top:6px;
+  opacity:.55;
+  font-size:.75rem;
 }
 
 /* =========================
@@ -996,30 +934,35 @@ footer p{
   bottom:12px;
   left:50%;
   transform:translateX(-50%);
-  width:min(500px,calc(100% - 24px));
+  width:min(460px,calc(100% - 24px));
+  background:rgba(9,29,44,.94);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:4px;
   padding:7px;
-  border-radius:20px;
-  background:rgba(23,63,53,.94);
-  box-shadow:0 12px 30px rgba(0,0,0,.22);
-  backdrop-filter:blur(15px);
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
 
 .mobile-nav a{
   color:white;
   text-decoration:none;
   text-align:center;
-  padding:8px 4px;
-  border-radius:14px;
-  font-size:.58rem;
-  font-weight:900;
-  letter-spacing:.5px;
+  padding:8px 3px;
+  border-radius:16px;
+  font-size:.62rem;
+  font-weight:800;
 }
 
 .mobile-nav a:hover{
   background:rgba(255,255,255,.1);
+}
+
+.mobile-nav-icon{
+  display:block;
+  font-size:1.1rem;
+  margin-bottom:2px;
 }
 
 /* =========================
@@ -1030,18 +973,19 @@ footer p{
   position:fixed;
   z-index:200;
   left:50%;
-  bottom:90px;
+  bottom:85px;
   transform:translate(-50%,20px);
-  background:#173f35;
+  background:#102b3f;
   color:white;
   padding:12px 17px;
   border-radius:999px;
-  font-size:.78rem;
+  font-size:.8rem;
   font-weight:800;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
   opacity:0;
   pointer-events:none;
   transition:.3s;
-  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  white-space:nowrap;
 }
 
 .toast.show{
@@ -1055,12 +999,12 @@ footer p{
 
 .confetti{
   position:fixed;
-  z-index:300;
+  top:-20px;
   width:8px;
   height:14px;
-  top:-20px;
-  animation:confettiFall 3s linear forwards;
+  z-index:300;
   pointer-events:none;
+  animation:confettiFall 3s linear forwards;
 }
 
 @keyframes confettiFall{
@@ -1074,34 +1018,27 @@ footer p{
    RESPONSIVE
 ========================= */
 
-@media(max-width:700px){
+@media(max-width:760px){
 
-  section{
-    padding:65px 16px;
-  }
-
-  .hero-content{
-    padding:45px 12px 100px;
+  .hero{
+    padding-top:55px;
   }
 
   .hero h1{
-    letter-spacing:-3px;
-  }
-
-  .countdown{
-    gap:6px;
-  }
-
-  .time-box{
-    padding:13px 5px;
+    font-size:clamp(2.7rem,15vw,4.5rem);
   }
 
   .dashboard{
     margin-top:-35px;
+    padding:16px;
   }
 
-  .dashboard-card{
-    padding:20px;
+  .dashboard-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section{
+    padding:55px 0;
   }
 
   .destination-grid{
@@ -1109,88 +1046,98 @@ footer p{
   }
 
   .destination{
-    min-height:260px;
+    min-height:320px;
+  }
+
+  .route-line{
+    left:12%;
+    right:12%;
   }
 
   .stops{
-    gap:0;
+    gap:4px;
+  }
+
+  .stop-icon{
+    width:48px;
+    height:48px;
+    font-size:1.2rem;
   }
 
   .stop strong{
-    font-size:.78rem;
+    font-size:.72rem;
   }
 
   .stop small{
     font-size:.62rem;
   }
 
-  .route-line,
-  .route-progress{
-    left:8%;
-    right:8%;
-  }
-
   .bus{
-    font-size:1.65rem;
+    font-size:1.7rem;
   }
 
-  .ticket{
-    grid-template-columns:1fr;
-    min-height:auto;
+  .pass{
+    padding:24px;
   }
 
-  .ticket-side{
-    min-height:85px;
-    border-left:none;
-    border-top:2px dashed rgba(63,43,10,.38);
+  .pass-main{
+    padding-right:28%;
   }
 
-  .ticket-side-content{
-    transform:none;
-    width:auto;
+  .stamp{
+    width:95px;
+    height:95px;
+    right:4%;
   }
 
-  .ticket-side .pass-word{
+  .stamp-inner{
+    width:72px;
+    height:72px;
+    font-size:.5rem;
+  }
+
+  .pass:after{
+    left:70%;
+  }
+
+  .activity{
+    grid-template-columns:38px 1fr;
+  }
+
+  .activity-status{
+    grid-column:2;
+    width:max-content;
+  }
+}
+
+@media(max-width:420px){
+
+  .countdown{
+    gap:6px;
+  }
+
+  .time-box{
+    padding:12px 5px;
+  }
+
+  .time-number{
     font-size:1.45rem;
   }
 
-  .ticket:after{
-    right:auto;
-    left:50%;
-    top:auto;
-    bottom:-15px;
-    transform:translateX(-50%);
+  .time-label{
+    font-size:.55rem;
   }
 
-  .ticket-main{
-    padding:27px 23px 32px;
+  .pass-main h3{
+    font-size:2.2rem;
   }
 
-  .ticket-title{
-    font-size:2.7rem;
-  }
-
-  .ticket-info{
-    grid-template-columns:1fr 1fr 1fr;
-    gap:8px;
-  }
-
-  .ticket-stamp{
-    width:70px;
-    height:70px;
-    right:18px;
-    bottom:18px;
-    font-size:.47rem;
-  }
-
-  .day summary{
-    padding:17px;
-  }
-
-  .day-content{
-    padding:0 17px 17px;
+  .stamp{
+    top:42%;
   }
 }
+
+/* Reduced motion */
 
 @media(prefers-reduced-motion:reduce){
   *,
@@ -1199,7 +1146,6 @@ footer p{
     animation-duration:.01ms!important;
     animation-iteration-count:1!important;
     scroll-behavior:auto!important;
-    transition:none!important;
   }
 }
 </style>
@@ -1216,55 +1162,53 @@ footer p{
   <div class="cloud one"></div>
   <div class="cloud two"></div>
 
-  <div class="floating float-water">💦</div>
-  <div class="floating float-leaf">🌿</div>
-  <div class="floating float-strawberry">🍓</div>
+  <div class="hero-icon">☁️</div>
+  <div class="hero-icon">🌴</div>
+  <div class="hero-icon">💦</div>
+  <div class="hero-icon">🍓</div>
 
   <div class="hero-content">
 
-    <div class="eyebrow" id="heroEyebrow">
-      FAMILY ADVENTURE • 2026
+    <div class="eyebrow">
+      🚌 FAMILY ADVENTURE • 2026
     </div>
 
     <h1>
-      TAMBUN
-      <span>× CAMERON</span>
+      TAMBUN × CAMERON
+      <span>3 FAMILIES • 1 ADVENTURE</span>
     </h1>
 
-    <div class="tagline">
-      3 Families • 1 Adventure
-    </div>
-
-    <div class="status-pill" id="statusPill">
-      GETTING READY...
-    </div>
+    <p class="tagline" id="heroTagline">
+      From Bangi to Tambun, through the highlands, and home to KL.
+    </p>
 
     <div class="countdown">
 
       <div class="time-box">
-        <strong id="days">00</strong>
-        <span>DAYS</span>
+        <span class="time-number" id="days">00</span>
+        <span class="time-label">Days</span>
       </div>
 
       <div class="time-box">
-        <strong id="hours">00</strong>
-        <span>HOURS</span>
+        <span class="time-number" id="hours">00</span>
+        <span class="time-label">Hours</span>
       </div>
 
       <div class="time-box">
-        <strong id="minutes">00</strong>
-        <span>MINUTES</span>
+        <span class="time-number" id="minutes">00</span>
+        <span class="time-label">Minutes</span>
       </div>
 
       <div class="time-box">
-        <strong id="seconds">00</strong>
-        <span>SECONDS</span>
+        <span class="time-number" id="seconds">00</span>
+        <span class="time-label">Seconds</span>
       </div>
 
     </div>
 
-    <div class="countdown-label" id="countdownLabel">
-      Until the adventure begins
+    <div class="status-pill">
+      <span class="status-dot"></span>
+      <span id="statusText">COUNTDOWN TO ADVENTURE</span>
     </div>
 
   </div>
@@ -1275,40 +1219,41 @@ footer p{
 
 
 <!-- =========================
-     LIVE DASHBOARD
+     DASHBOARD
 ========================= -->
 
-<section class="dashboard" id="dashboard">
+<section class="container">
 
-  <div class="container">
+  <div class="dashboard">
 
-    <div class="dashboard-card">
+    <div class="dashboard-grid">
 
-      <div class="dashboard-top">
+      <div class="live-card">
 
-        <div>
-          <div class="live-label">
-            <span class="live-dot"></span>
-            LIVE TRIP STATUS
-          </div>
+        <div class="live-label">LIVE TRIP STATUS</div>
 
-          <div class="dashboard-status" id="dashboardStatus">
-            Getting ready...
-          </div>
-        </div>
+        <h3 id="liveTitle">Adventure loading...</h3>
+
+        <p id="liveDescription">
+          Getting everything ready.
+        </p>
 
       </div>
 
       <div class="next-card">
 
-        <small id="nextLabel">NEXT UP</small>
+        <div class="next-icon" id="nextIcon">🚌</div>
+
+        <div class="next-time" id="nextTime">
+          NEXT UP
+        </div>
 
         <h3 id="nextTitle">
-          Preparing the adventure...
+          Getting ready...
         </h3>
 
-        <p id="nextDetail">
-          The trip timeline will appear here.
+        <p id="nextDescription">
+          The adventure is coming.
         </p>
 
       </div>
@@ -1324,26 +1269,25 @@ footer p{
      JOURNEY
 ========================= -->
 
-<section id="journey">
+<section class="section" id="journey">
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-header">
 
-      <small>THE JOURNEY</small>
+      <div class="kicker">THE JOURNEY</div>
 
       <h2>Bangi → Tambun → Cameron → KL</h2>
 
-      <p>
-        One trip, two destinations, plenty of memories.
-      </p>
+      <p>One road. Four stops. Plenty of stories.</p>
 
     </div>
 
     <div class="journey-wrap">
 
-      <div class="route-line"></div>
-      <div class="route-progress" id="routeProgress"></div>
+      <div class="route-line">
+        <div class="route-progress" id="routeProgress"></div>
+      </div>
 
       <div class="bus" id="bus" title="Tap me!">
         🚌
@@ -1351,28 +1295,28 @@ footer p{
 
       <div class="stops">
 
-        <div class="stop" data-stop="0">
-          <div class="stop-dot"></div>
+        <div class="stop" id="stop0">
+          <div class="stop-icon">🏠</div>
           <strong>Bangi</strong>
           <small>Start</small>
         </div>
 
-        <div class="stop" data-stop="1">
-          <div class="stop-dot"></div>
+        <div class="stop" id="stop1">
+          <div class="stop-icon">💦</div>
           <strong>Tambun</strong>
-          <small>Water + Adventure</small>
+          <small>16–18 Oct</small>
         </div>
 
-        <div class="stop" data-stop="2">
-          <div class="stop-dot"></div>
+        <div class="stop" id="stop2">
+          <div class="stop-icon">🍓</div>
           <strong>Cameron</strong>
-          <small>Hills + Strawberries</small>
+          <small>18–19 Oct</small>
         </div>
 
-        <div class="stop" data-stop="3">
-          <div class="stop-dot"></div>
+        <div class="stop" id="stop3">
+          <div class="stop-icon">🏁</div>
           <strong>KL</strong>
-          <small>Home</small>
+          <small>Finish</small>
         </div>
 
       </div>
@@ -1388,54 +1332,89 @@ footer p{
      DESTINATIONS
 ========================= -->
 
-<section id="destinations">
+<section class="section" id="destinations">
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-header">
 
-      <small>THE DESTINATIONS</small>
+      <div class="kicker">DESTINATIONS</div>
 
-      <h2>Two very different adventures</h2>
+      <h2>Two very different adventures.</h2>
 
-      <p>
-        Splash first. Chill later.
-      </p>
+      <p>Water, adventure, hills, strawberries and good food.</p>
 
     </div>
 
+
     <div class="destination-grid">
+
+      <!-- TAMBUN -->
 
       <div class="destination tambun" id="tambunCard">
 
-        <div class="destination-badge">
-          16–18 OCT
+        <div class="destination-bg-icon">🌴</div>
+
+        <div class="bubble b1"></div>
+        <div class="bubble b2"></div>
+        <div class="bubble b3"></div>
+        <div class="bubble b4"></div>
+
+        <div class="destination-content">
+
+          <div class="kicker">16–18 OCT</div>
+
+          <h3>💦 Lost World of Tambun</h3>
+
+          <p>
+            Waterpark, adventure activities and a full day of fun.
+          </p>
+
+          <div class="activity-icons">
+
+            <div class="activity-icon">🏊</div>
+            <div class="activity-icon">🌊</div>
+            <div class="activity-icon">🦖</div>
+            <div class="activity-icon">♨️</div>
+            <div class="activity-icon">🌴</div>
+
+          </div>
+
         </div>
-
-        <div class="emoji">💦</div>
-
-        <h3>Lost World<br>of Tambun</h3>
-
-        <p>
-          Waterpark, adventure activities, family fun and a whole day of exploring.
-        </p>
 
       </div>
 
 
+      <!-- CAMERON -->
+
       <div class="destination cameron" id="cameronCard">
 
-        <div class="destination-badge">
-          18–19 OCT
+        <div class="destination-bg-icon">🌿</div>
+
+        <div class="strawberry s1">🍓</div>
+        <div class="strawberry s2">🍓</div>
+
+        <div class="destination-content">
+
+          <div class="kicker" style="color:#16805a">18–19 OCT</div>
+
+          <h3>🍓 Cameron Highlands</h3>
+
+          <p>
+            Cool weather, steamboat, strawberries and highland exploring.
+          </p>
+
+          <div class="activity-icons">
+
+            <div class="activity-icon">🍲</div>
+            <div class="activity-icon">🏮</div>
+            <div class="activity-icon">🍓</div>
+            <div class="activity-icon">🌽</div>
+            <div class="activity-icon">🍦</div>
+
+          </div>
+
         </div>
-
-        <div class="emoji">🍓</div>
-
-        <h3>Cameron<br>Highlands</h3>
-
-        <p>
-          Cool weather, steamboat dinner, strawberries, sweet corn and a relaxed highland day.
-        </p>
 
       </div>
 
@@ -1450,21 +1429,20 @@ footer p{
      ITINERARY
 ========================= -->
 
-<section id="plan">
+<section class="section" id="plan">
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-header">
 
-      <small>THE PLAN</small>
+      <div class="kicker">THE PLAN</div>
 
-      <h2>Trip itinerary</h2>
+      <h2>Four days. One adventure.</h2>
 
-      <p>
-        Open each day to see what's happening.
-      </p>
+      <p>Open each day for the full plan.</p>
 
     </div>
+
 
     <div class="itinerary">
 
@@ -1474,36 +1452,31 @@ footer p{
 
         <summary>
 
-          <div class="day-left">
+          <div class="day-number">16</div>
 
-            <div class="day-number">
-              01
-            </div>
-
-            <div class="day-title">
-              <strong>Friday • 16 Oct</strong>
-              <small>Bangi → Tambun</small>
-            </div>
-
+          <div class="day-title">
+            <strong>Friday • Bangi → Tambun</strong>
+            <span>Travel day + Onsen check-in</span>
           </div>
 
-          <span class="day-badge">UPCOMING</span>
+          <div class="day-arrow">⌄</div>
 
         </summary>
 
-        <div class="day-content">
+        <div class="activities">
 
           <div class="activity"
                data-start="2026-10-16T09:00:00+08:00"
                data-end="2026-10-16T11:00:00+08:00">
 
-            <div class="activity-time">9:00 AM</div>
+            <div class="activity-icon-big">🥐</div>
 
-            <h4>Breakfast • Dbukit Bangi</h4>
+            <div class="activity-info">
+              <strong>Breakfast at Dbukit Bangi</strong>
+              <span>9:00 AM</span>
+            </div>
 
-            <p>Start the trip with breakfast before heading north.</p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1512,13 +1485,14 @@ footer p{
                data-start="2026-10-16T11:00:00+08:00"
                data-end="2026-10-16T15:00:00+08:00">
 
-            <div class="activity-time">11:00 AM</div>
+            <div class="activity-icon-big">🚌</div>
 
-            <h4>Depart for Tambun</h4>
+            <div class="activity-info">
+              <strong>Depart for Tambun</strong>
+              <span>11:00 AM</span>
+            </div>
 
-            <p>Road trip time! 🚌</p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1527,28 +1501,30 @@ footer p{
                data-start="2026-10-16T15:00:00+08:00"
                data-end="2026-10-16T20:00:00+08:00">
 
-            <div class="activity-time">3:00 PM</div>
+            <div class="activity-icon-big">🏨</div>
 
-            <h4>Check-in • Onsen</h4>
+            <div class="activity-info">
+              <strong>Check-in at Onsen</strong>
+              <span>3:00 PM • Free time</span>
+            </div>
 
-            <p>Check in, settle down and enjoy some free time.</p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
 
           <div class="activity"
                data-start="2026-10-16T20:00:00+08:00"
-               data-end="2026-10-17T08:00:00+08:00">
+               data-end="2026-10-17T00:00:00+08:00">
 
-            <div class="activity-time">8:00 PM</div>
+            <div class="activity-icon-big">🍽️</div>
 
-            <h4>Dinner</h4>
+            <div class="activity-info">
+              <strong>Dinner</strong>
+              <span>8:00 PM • Location TBC</span>
+            </div>
 
-            <p>Dinner location to be decided.</p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1563,38 +1539,31 @@ footer p{
 
         <summary>
 
-          <div class="day-left">
+          <div class="day-number">17</div>
 
-            <div class="day-number">
-              02
-            </div>
-
-            <div class="day-title">
-              <strong>Saturday • 17 Oct</strong>
-              <small>Lost World of Tambun</small>
-            </div>
-
+          <div class="day-title">
+            <strong>Saturday • Lost World</strong>
+            <span>Full day of adventure</span>
           </div>
 
-          <span class="day-badge">UPCOMING</span>
+          <div class="day-arrow">⌄</div>
 
         </summary>
 
-        <div class="day-content">
+        <div class="activities">
 
           <div class="activity"
                data-start="2026-10-17T08:00:00+08:00"
-               data-end="2026-10-18T00:00:00+08:00">
+               data-end="2026-10-18T12:00:00+08:00">
 
-            <div class="activity-time">ALL DAY</div>
+            <div class="activity-icon-big">🦖</div>
 
-            <h4>Lost World of Tambun</h4>
+            <div class="activity-info">
+              <strong>Lost World of Tambun</strong>
+              <span>Waterpark + adventure activities</span>
+            </div>
 
-            <p>
-              Waterpark, adventure activities and a full day of family fun.
-            </p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1609,36 +1578,31 @@ footer p{
 
         <summary>
 
-          <div class="day-left">
+          <div class="day-number">18</div>
 
-            <div class="day-number">
-              03
-            </div>
-
-            <div class="day-title">
-              <strong>Sunday • 18 Oct</strong>
-              <small>Tambun → Cameron</small>
-            </div>
-
+          <div class="day-title">
+            <strong>Sunday • Tambun → Cameron</strong>
+            <span>Checkout + highlands</span>
           </div>
 
-          <span class="day-badge">UPCOMING</span>
+          <div class="day-arrow">⌄</div>
 
         </summary>
 
-        <div class="day-content">
+        <div class="activities">
 
           <div class="activity"
                data-start="2026-10-18T12:00:00+08:00"
                data-end="2026-10-18T14:00:00+08:00">
 
-            <div class="activity-time">12:00 PM</div>
+            <div class="activity-icon-big">🧳</div>
 
-            <h4>Checkout + Lunch</h4>
+            <div class="activity-info">
+              <strong>Checkout + Lunch</strong>
+              <span>12:00 PM • Lunch location TBC</span>
+            </div>
 
-            <p>Checkout from Tambun and stop for lunch.</p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1647,13 +1611,14 @@ footer p{
                data-start="2026-10-18T14:00:00+08:00"
                data-end="2026-10-18T17:00:00+08:00">
 
-            <div class="activity-time">2:00 PM</div>
+            <div class="activity-icon-big">🚌</div>
 
-            <h4>Depart for Cameron Highlands</h4>
+            <div class="activity-info">
+              <strong>Depart for Cameron Highlands</strong>
+              <span>2:00 PM</span>
+            </div>
 
-            <p>Next stop: cool weather and highland views.</p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1662,13 +1627,14 @@ footer p{
                data-start="2026-10-18T17:00:00+08:00"
                data-end="2026-10-18T20:00:00+08:00">
 
-            <div class="activity-time">5:00 PM</div>
+            <div class="activity-icon-big">🍲</div>
 
-            <h4>Steamboat Dinner</h4>
+            <div class="activity-info">
+              <strong>Steamboat Dinner</strong>
+              <span>5:00 PM</span>
+            </div>
 
-            <p>Warm food in the cool Cameron weather.</p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1677,13 +1643,14 @@ footer p{
                data-start="2026-10-18T20:00:00+08:00"
                data-end="2026-10-19T08:00:00+08:00">
 
-            <div class="activity-time">8:00 PM</div>
+            <div class="activity-icon-big">🏮</div>
 
-            <h4>Tokyo Town</h4>
+            <div class="activity-info">
+              <strong>Tokyo Town</strong>
+              <span>8:00 PM</span>
+            </div>
 
-            <p>Evening stop before calling it a night.</p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1698,36 +1665,31 @@ footer p{
 
         <summary>
 
-          <div class="day-left">
+          <div class="day-number">19</div>
 
-            <div class="day-number">
-              04
-            </div>
-
-            <div class="day-title">
-              <strong>Monday • 19 Oct</strong>
-              <small>Cameron Highlands → KL</small>
-            </div>
-
+          <div class="day-title">
+            <strong>Monday • Cameron → KL</strong>
+            <span>Strawberries + final stop</span>
           </div>
 
-          <span class="day-badge">UPCOMING</span>
+          <div class="day-arrow">⌄</div>
 
         </summary>
 
-        <div class="day-content">
+        <div class="activities">
 
           <div class="activity"
                data-start="2026-10-19T08:00:00+08:00"
                data-end="2026-10-19T10:00:00+08:00">
 
-            <div class="activity-time">8:00 AM</div>
+            <div class="activity-icon-big">🥞</div>
 
-            <h4>Breakfast • KHM</h4>
+            <div class="activity-info">
+              <strong>Breakfast at KHM</strong>
+              <span>8:00 AM</span>
+            </div>
 
-            <p>Breakfast before exploring Cameron.</p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1736,15 +1698,14 @@ footer p{
                data-start="2026-10-19T10:00:00+08:00"
                data-end="2026-10-19T12:00:00+08:00">
 
-            <div class="activity-time">10:00 AM</div>
+            <div class="activity-icon-big">🍓</div>
 
-            <h4>Taman Sedia</h4>
+            <div class="activity-info">
+              <strong>Taman Sedia</strong>
+              <span>10:00 AM • Strawberry picking + scone hunting</span>
+            </div>
 
-            <p>
-              Strawberry picking at Abg Strawberry, Opah Strawberry and scone hunting.
-            </p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1753,15 +1714,14 @@ footer p{
                data-start="2026-10-19T12:00:00+08:00"
                data-end="2026-10-19T15:00:00+08:00">
 
-            <div class="activity-time">12:00 PM</div>
+            <div class="activity-icon-big">🌽</div>
 
-            <h4>Kea Farm</h4>
+            <div class="activity-info">
+              <strong>Kea Farm</strong>
+              <span>12:00 PM • Strawberry chocolate, ice cream, sweet corn + lunch</span>
+            </div>
 
-            <p>
-              Strawberry chocolate, ice cream, sweet corn and lunch.
-            </p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1770,15 +1730,14 @@ footer p{
                data-start="2026-10-19T15:00:00+08:00"
                data-end="2026-10-19T15:01:00+08:00">
 
-            <div class="activity-time">3:00 PM</div>
+            <div class="activity-icon-big">🏁</div>
 
-            <h4>Depart for KL</h4>
+            <div class="activity-info">
+              <strong>Depart for KL</strong>
+              <span>3:00 PM • Official completion of the adventure</span>
+            </div>
 
-            <p>
-              Final departure from Cameron Highlands. This is the official completion time of the adventure.
-            </p>
-
-            <span class="activity-status">UPCOMING</span>
+            <div class="activity-status">UPCOMING</div>
 
           </div>
 
@@ -1797,104 +1756,75 @@ footer p{
      ADVENTURE PASS
 ========================= -->
 
-<section class="pass-section" id="pass">
+<section class="section pass-section" id="pass">
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-header">
 
-      <small>YOUR ADVENTURE PASS</small>
+      <div class="kicker">YOUR TICKET</div>
 
-      <h2>Keep this ticket</h2>
+      <h2>Adventure Pass</h2>
 
-      <p>
-        One ticket. Two destinations. Three families. One unforgettable trip.
+      <p style="color:rgba(255,255,255,.65)">
+        Keep this one. It belongs to the adventure.
       </p>
 
     </div>
 
 
-    <div class="ticket" id="ticket">
+    <div class="pass" id="passCard">
 
-      <div class="ticket-shine"></div>
+      <div class="pass-shine"></div>
 
-      <div class="ticket-main">
+      <div class="pass-top">
 
-        <div class="ticket-brand">
-
-          <div class="ticket-logo">
-            TAMBUN × CAMERON 2026
-          </div>
-
-          <div class="ticket-admit">
-            ADMIT ONE ADVENTURE
-          </div>
-
+        <div class="pass-small">
+          TAMBUN × CAMERON 2026
         </div>
 
-
-        <div class="ticket-title">
-          ADVENTURE
-          <span>PASS</span>
+        <div class="pass-admit">
+          ADMIT ONE ADVENTURE
         </div>
 
+      </div>
 
-        <div class="ticket-subtitle">
+
+      <div class="pass-main">
+
+        <h3>
+          ADVENTURE<br>
+          PASS
+        </h3>
+
+        <p>
           3 FAMILIES • 1 ADVENTURE
-        </div>
+        </p>
 
+        <div class="pass-details">
 
-        <div class="ticket-info">
-
-          <div>
-            <small>DATE</small>
-            <strong>16–19 OCT 2026</strong>
-          </div>
-
-          <div>
-            <small>ROUTE</small>
-            <strong>BANGI → KL</strong>
-          </div>
-
-          <div>
-            <small>STOPS</small>
-            <strong>TAMBUN + CAMERON</strong>
-          </div>
+          <div class="pass-detail">📅 16–19 OCT 2026</div>
+          <div class="pass-detail">💦 TAMBUN</div>
+          <div class="pass-detail">🍓 CAMERON</div>
+          <div class="pass-detail">🏁 KL</div>
 
         </div>
 
+      </div>
 
-        <div class="ticket-stamp">
+
+      <div class="stamp">
+
+        <div class="stamp-inner">
+          ✦<br>
           FAMILY<br>
           ADVENTURE<br>
-          2026
+          2026<br>
+          ✦
         </div>
 
       </div>
 
-
-      <div class="ticket-side">
-
-        <div class="ticket-side-content">
-
-          <div class="pass-word">
-            PASS
-          </div>
-
-          <small>
-            VALID FOR<br>
-            THE WHOLE CREW
-          </small>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="pass-note">
-      🎟️ No printing required. Just show up and enjoy the adventure.
     </div>
 
   </div>
@@ -1908,15 +1838,15 @@ footer p{
 
 <footer>
 
-  <h3>TAMBUN × CAMERON 2026</h3>
+  <strong>🚌 TAMBUN × CAMERON 2026 🍓</strong>
 
-  <p>
+  <span>
     3 Families • 1 Adventure
-  </p>
+  </span>
 
-  <p>
-    See you on the road 🚌
-  </p>
+  <span>
+    See you on the road.
+  </span>
 
 </footer>
 
@@ -1927,24 +1857,37 @@ footer p{
 
 <nav class="mobile-nav">
 
-  <a href="#home">HOME</a>
-  <a href="#journey">JOURNEY</a>
-  <a href="#plan">PLAN</a>
-  <a href="#pass">PASS</a>
+  <a href="#home">
+    <span class="mobile-nav-icon">🏠</span>
+    HOME
+  </a>
+
+  <a href="#journey">
+    <span class="mobile-nav-icon">🚌</span>
+    JOURNEY
+  </a>
+
+  <a href="#plan">
+    <span class="mobile-nav-icon">📋</span>
+    PLAN
+  </a>
+
+  <a href="#pass">
+    <span class="mobile-nav-icon">🎟️</span>
+    PASS
+  </a>
 
 </nav>
 
 
-<div class="toast" id="toast">
-  Adventure mode activated!
-</div>
+<div class="toast" id="toast"></div>
 
 
 <script>
 
-/* =========================================
+/* =====================================
    TRIP DATES
-========================================= */
+===================================== */
 
 const tripStart =
   new Date("2026-10-16T08:00:00+08:00");
@@ -1956,23 +1899,19 @@ const tripEnd =
   new Date("2026-10-19T15:00:00+08:00");
 
 
-let completionShown = false;
-let lastDay = null;
-
-
-/* =========================================
+/* =====================================
    HELPERS
-========================================= */
+===================================== */
 
-function pad(number){
-  return String(number).padStart(2,"0");
+const $ = id => document.getElementById(id);
+
+function pad(num){
+  return String(Math.max(0,num)).padStart(2,"0");
 }
-
 
 function showToast(message){
 
-  const toast =
-    document.getElementById("toast");
+  const toast = $("toast");
 
   toast.textContent = message;
 
@@ -1981,44 +1920,58 @@ function showToast(message){
   clearTimeout(window.toastTimer);
 
   window.toastTimer =
-    setTimeout(()=>{
+    setTimeout(() => {
       toast.classList.remove("show");
     },2200);
 }
 
 
-/* =========================================
+/* =====================================
    COUNTDOWN
-========================================= */
+===================================== */
 
 function updateCountdown(){
 
   const now = new Date();
 
   let target;
-  let label;
+  let message;
 
   if(now < tripStart){
 
     target = tripStart;
 
-    label = "Until the adventure begins";
+    message = "COUNTDOWN TO ADVENTURE";
 
   }else if(now < tripEnd){
 
     target = tripEnd;
 
-    label = "Until the adventure is complete";
+    message = "ADVENTURE IN PROGRESS";
 
   }else{
 
-    target = tripEnd;
+    $("days").textContent = "00";
+    $("hours").textContent = "00";
+    $("minutes").textContent = "00";
+    $("seconds").textContent = "00";
 
-    label = "Adventure complete 🎉";
+    $("statusText").textContent =
+      "ADVENTURE COMPLETE";
 
+    $("heroTagline").textContent =
+      "What a trip. Until the next adventure. 🚌🍓";
+
+    document.querySelector(".hero")
+      .classList.remove("cameron");
+
+    document.querySelector(".hero")
+      .classList.add("complete");
+
+    return;
   }
 
-  let diff =
+  const diff =
     Math.max(0,target-now);
 
   const totalSeconds =
@@ -2036,94 +1989,51 @@ function updateCountdown(){
   const seconds =
     totalSeconds%60;
 
+  $("days").textContent = pad(days);
+  $("hours").textContent = pad(hours);
+  $("minutes").textContent = pad(minutes);
+  $("seconds").textContent = pad(seconds);
 
-  document.getElementById("days").textContent =
-    pad(days);
+  $("statusText").textContent = message;
+}
 
-  document.getElementById("hours").textContent =
-    pad(hours);
 
-  document.getElementById("minutes").textContent =
-    pad(minutes);
+/* =====================================
+   HERO ATMOSPHERE
+===================================== */
 
-  document.getElementById("seconds").textContent =
-    pad(seconds);
+function updateHero(){
 
-  document.getElementById("countdownLabel").textContent =
-    label;
-
+  const now = new Date();
 
   const hero =
     document.querySelector(".hero");
 
-  const pill =
-    document.getElementById("statusPill");
+  hero.classList.remove("cameron","complete");
 
-  const eyebrow =
-    document.getElementById("heroEyebrow");
-
-
-  hero.classList.remove(
-    "cameron",
-    "complete"
-  );
-
-
-  if(now < tripStart){
-
-    pill.textContent =
-      "GETTING READY FOR THE ADVENTURE";
-
-    eyebrow.textContent =
-      "FAMILY ADVENTURE • 2026";
-
-  }else if(now < tambunEnd){
-
-    pill.textContent =
-      "💦 TAMBUN MODE • ADVENTURE ON";
-
-    eyebrow.textContent =
-      "TAMBUN • 16–18 OCT";
-
-  }else if(now < tripEnd){
-
-    pill.textContent =
-      "🍓 CAMERON MODE • CHILL TIME";
-
-    eyebrow.textContent =
-      "CAMERON HIGHLANDS • 18–19 OCT";
+  if(now >= tambunEnd && now < tripEnd){
 
     hero.classList.add("cameron");
 
-  }else{
+    $("heroTagline").textContent =
+      "From tropical water adventures to cool highland mornings. 🍓";
 
-    pill.textContent =
-      "✨ ADVENTURE COMPLETE";
-
-    eyebrow.textContent =
-      "THANKS FOR THE MEMORIES";
+  }else if(now >= tripEnd){
 
     hero.classList.add("complete");
 
-    if(!completionShown){
+  }else{
 
-      completionShown = true;
-
-      createConfetti();
-
-      showToast(
-        "🎉 TAMBUN × CAMERON 2026 COMPLETE!"
-      );
-    }
+    $("heroTagline").textContent =
+      "From Bangi to Tambun, through the highlands, and home to KL.";
 
   }
-
 }
 
 
-/* =========================================
+/* =====================================
    JOURNEY PROGRESS
-========================================= */
+===================================== */
 
 function updateRoute(){
 
@@ -2141,486 +2051,423 @@ function updateRoute(){
 
   }else{
 
-    const total =
-      tripEnd-tripStart;
-
-    const elapsed =
-      now-tripStart;
-
     progress =
-      Math.min(
-        100,
-        Math.max(
-          0,
-          elapsed/total*100
-        )
+      ((now-tripStart)/(tripEnd-tripStart))*100;
+
+  }
+
+  progress =
+    Math.max(0,Math.min(100,progress));
+
+  $("routeProgress").style.width =
+    progress+"%";
+
+  const bus =
+    $("bus");
+
+  bus.style.left =
+    `calc(8% + ${progress*.84}%)`;
+
+
+  let activeStop = 0;
+
+  if(now >= tripEnd){
+    activeStop = 3;
+  }else if(now >= tambunEnd){
+    activeStop = 2;
+  }else if(now >= tripStart){
+    activeStop = 1;
+  }
+
+  document.querySelectorAll(".stop")
+    .forEach((stop,index)=>{
+      stop.classList.toggle(
+        "active",
+        index===activeStop
       );
+    });
+}
+
+
+/* =====================================
+   ACTIVITY STATUS
+===================================== */
+
+function updateActivities(){
+
+  const now = new Date();
+
+  const activities =
+    [...document.querySelectorAll(".activity")];
+
+  let nextFound = false;
+  let currentActivity = null;
+
+  activities.forEach(activity => {
+
+    const start =
+      new Date(activity.dataset.start);
+
+    const end =
+      new Date(activity.dataset.end);
+
+    const status =
+      activity.querySelector(".activity-status");
+
+    activity.classList.remove("now","next");
+
+    if(now >= start && now < end){
+
+      activity.classList.add("now");
+
+      status.textContent = "NOW";
+
+      currentActivity = activity;
+
+    }else if(now < start && !nextFound){
+
+      activity.classList.add("next");
+
+      status.textContent = "NEXT";
+
+      nextFound = true;
+
+    }else if(now >= end){
+
+      status.textContent = "DONE";
+
+    }else{
+
+      status.textContent = "UPCOMING";
+
+    }
+
+  });
+
+  return currentActivity;
+}
+
+
+/* =====================================
+   DASHBOARD
+===================================== */
+
+function updateDashboard(){
+
+  const now = new Date();
+
+  const current =
+    updateActivities();
+
+  if(now < tripStart){
+
+    $("liveTitle").textContent =
+      "The adventure is coming! 🚌";
+
+    $("liveDescription").textContent =
+      "Everything is getting ready for the big family trip.";
+
+  }else if(now >= tripEnd){
+
+    $("liveTitle").textContent =
+      "Adventure Complete! 🏁";
+
+    $("liveDescription").textContent =
+      "Tambun → Cameron → KL. Another family adventure in the books.";
+
+  }else if(now >= tambunEnd){
+
+    $("liveTitle").textContent =
+      "Cameron Highlands mode 🍓";
+
+    $("liveDescription").textContent =
+      "Cool weather, good food and strawberry hunting.";
+
+  }else{
+
+    $("liveTitle").textContent =
+      "Tambun adventure mode 💦";
+
+    $("liveDescription").textContent =
+      "Water, adventure and family time.";
 
   }
 
 
-  document.getElementById(
-    "routeProgress"
-  ).style.width =
-    progress+"%";
-
-
-  const bus =
-    document.getElementById("bus");
-
-  const busLeft =
-    7 + (progress*0.86);
-
-  bus.style.left =
-    `calc(${busLeft}% - 15px)`;
-
-
-  const stops =
-    document.querySelectorAll(".stop");
-
-  stops.forEach((stop,index)=>{
-
-    stop.classList.remove(
-      "active",
-      "done"
-    );
-
-    const stopPoint =
-      [0,33,66,100][index];
-
-    if(progress > stopPoint + 3){
-
-      stop.classList.add("done");
-
-    }else if(
-      progress >= stopPoint-8
-    ){
-
-      stop.classList.add("active");
-
-    }
-
-  });
-
-}
-
-
-/* =========================================
-   ACTIVITIES
-========================================= */
-
-function updateActivities(){
-
-  const now =
-    new Date();
+  /* Next activity */
 
   const activities =
-    document.querySelectorAll(".activity");
+    [...document.querySelectorAll(".activity")];
 
-  let currentActivity = null;
-  let nextActivity = null;
-
-
-  activities.forEach(activity=>{
-
-    const start =
-      new Date(
-        activity.dataset.start
-      );
-
-    const end =
-      new Date(
-        activity.dataset.end
-      );
-
-    const status =
-      activity.querySelector(
-        ".activity-status"
-      );
-
-    activity.classList.remove(
-      "now",
-      "next",
-      "done"
+  const next =
+    activities.find(a =>
+      new Date(a.dataset.start) > now
     );
 
-
-    if(now >= end){
-
-      activity.classList.add("done");
-
-      status.textContent =
-        "DONE";
-
-    }else if(
-      now >= start &&
-      now < end
-    ){
-
-      activity.classList.add("now");
-
-      status.textContent =
-        "NOW";
-
-      currentActivity =
-        activity;
-
-    }else if(
-      !nextActivity &&
-      now < start
-    ){
-
-      activity.classList.add("next");
-
-      status.textContent =
-        "NEXT";
-
-      nextActivity =
-        activity;
-
-    }else{
-
-      status.textContent =
-        "UPCOMING";
-
-    }
-
-  });
-
-
-  return {
-    currentActivity,
-    nextActivity
-  };
-
-}
-
-
-/* =========================================
-   DASHBOARD
-========================================= */
-
-function updateDashboard(){
-
-  const {
-    currentActivity,
-    nextActivity
-  } =
-    updateActivities();
-
-
-  const status =
-    document.getElementById(
-      "dashboardStatus"
-    );
-
-  const nextTitle =
-    document.getElementById(
-      "nextTitle"
-    );
-
-  const nextDetail =
-    document.getElementById(
-      "nextDetail"
-    );
-
-  const nextLabel =
-    document.getElementById(
-      "nextLabel"
-    );
-
-
-  if(currentActivity){
+  if(current){
 
     const title =
-      currentActivity.querySelector("h4");
+      current.querySelector(".activity-info strong");
 
     const detail =
-      currentActivity.querySelector("p");
+      current.querySelector(".activity-info span");
 
-    status.textContent =
-      "🔥 " + title.textContent;
+    const icon =
+      current.querySelector(".activity-icon-big");
 
-    nextLabel.textContent =
-      "HAPPENING NOW";
+    $("nextIcon").textContent =
+      icon.textContent;
 
-    nextTitle.textContent =
+    $("nextTime").textContent =
+      "NOW";
+
+    $("nextTitle").textContent =
       title.textContent;
 
-    nextDetail.textContent =
+    $("nextDescription").textContent =
       detail.textContent;
 
-  }else if(nextActivity){
+  }else if(next){
 
     const title =
-      nextActivity.querySelector("h4");
+      next.querySelector(".activity-info strong");
 
     const detail =
-      nextActivity.querySelector("p");
+      next.querySelector(".activity-info span");
 
-    status.textContent =
-      "Next: " + title.textContent;
+    const icon =
+      next.querySelector(".activity-icon-big");
 
-    nextLabel.textContent =
+    $("nextIcon").textContent =
+      icon.textContent;
+
+    $("nextTime").textContent =
       "NEXT UP";
 
-    nextTitle.textContent =
+    $("nextTitle").textContent =
       title.textContent;
 
-    nextDetail.textContent =
+    $("nextDescription").textContent =
       detail.textContent;
 
   }else{
 
-    status.textContent =
-      "🎉 Adventure complete!";
-
-    nextLabel.textContent =
-      "TRIP COMPLETE";
-
-    nextTitle.textContent =
-      "That's a wrap!";
-
-    nextDetail.textContent =
-      "Thanks for being part of Tambun × Cameron 2026.";
-
+    $("nextIcon").textContent = "🏁";
+    $("nextTime").textContent = "FINISHED";
+    $("nextTitle").textContent =
+      "See you on the next adventure!";
+    $("nextDescription").textContent =
+      "The trip has officially ended.";
   }
-
 }
 
 
-/* =========================================
-   DAY STATES
-========================================= */
+/* =====================================
+   DAY STATUS + AUTO OPEN
+===================================== */
+
+let lastOpenDay = null;
 
 function updateDayStates(){
 
-  const now =
-    new Date();
+  const now = new Date();
 
-  const days =
-    document.querySelectorAll(".day");
+  document.querySelectorAll(".day")
+    .forEach(day => {
 
+      const activities =
+        [...day.querySelectorAll(".activity")];
 
-  days.forEach(day=>{
+      const hasCurrent =
+        activities.some(a => {
 
-    const activities =
-      day.querySelectorAll(".activity");
+          const start =
+            new Date(a.dataset.start);
 
-    let firstStart = null;
-    let lastEnd = null;
+          const end =
+            new Date(a.dataset.end);
 
-    activities.forEach(activity=>{
+          return now >= start && now < end;
 
-      const start =
-        new Date(
-          activity.dataset.start
-        );
+        });
 
-      const end =
-        new Date(
-          activity.dataset.end
-        );
-
-      if(!firstStart || start < firstStart)
-        firstStart = start;
-
-      if(!lastEnd || end > lastEnd)
-        lastEnd = end;
+      day.classList.toggle(
+        "current",
+        hasCurrent
+      );
 
     });
+}
 
 
-    const badge =
-      day.querySelector(".day-badge");
+function autoOpenCurrentDay(){
 
+  const now = new Date();
 
-    day.classList.remove("current");
+  const days =
+    [...document.querySelectorAll(".day")];
 
+  let currentDay = null;
 
-    if(now < firstStart){
+  days.forEach(day => {
 
-      badge.textContent =
-        "UPCOMING";
+    const activities =
+      [...day.querySelectorAll(".activity")];
 
-    }else if(
-      now >= firstStart &&
-      now < lastEnd
-    ){
+    const current =
+      activities.some(a => {
 
-      day.classList.add("current");
+        const start =
+          new Date(a.dataset.start);
 
-      badge.textContent =
-        "NOW";
+        const end =
+          new Date(a.dataset.end);
 
-    }else{
+        return now >= start && now < end;
 
-      badge.textContent =
-        "DONE";
+      });
 
+    if(current){
+      currentDay = day;
     }
 
   });
 
-}
+  if(currentDay && currentDay !== lastOpenDay){
 
+    days.forEach(day => {
 
-/* =========================================
-   AUTO OPEN CURRENT DAY
-========================================= */
-
-function autoOpenCurrentDay(){
-
-  const now =
-    new Date();
-
-  const days =
-    document.querySelectorAll(".day");
-
-  let currentDay = null;
-
-  days.forEach((day,index)=>{
-
-    const activities =
-      day.querySelectorAll(".activity");
-
-    activities.forEach(activity=>{
-
-      const start =
-        new Date(
-          activity.dataset.start
-        );
-
-      const end =
-        new Date(
-          activity.dataset.end
-        );
-
-      if(
-        now >= start &&
-        now < end
-      ){
-
-        currentDay = index;
-
+      if(day !== currentDay){
+        day.open = false;
       }
 
     });
 
-  });
+    currentDay.open = true;
 
-
-  if(currentDay !== null){
-
-    if(lastDay !== currentDay){
-
-      days.forEach(
-        day=>day.open=false
-      );
-
-      days[currentDay].open = true;
-
-      lastDay = currentDay;
-
-    }
-
+    lastOpenDay = currentDay;
   }
-
 }
 
 
-/* =========================================
-   CONFETTI
-========================================= */
+/* =====================================
+   BUS INTERACTION
+===================================== */
 
-function createConfetti(){
+$("bus").addEventListener("click",()=>{
 
-  for(let i=0;i<45;i++){
+  $("bus").animate(
+    [
+      {transform:"translateY(0)"},
+      {transform:"translateY(-12px) rotate(-3deg)"},
+      {transform:"translateY(0)"}
+    ],
+    {
+      duration:500,
+      easing:"ease-out"
+    }
+  );
 
-    const piece =
-      document.createElement("div");
-
-    piece.className =
-      "confetti";
-
-    piece.style.left =
-      Math.random()*100+"vw";
-
-    piece.style.animationDelay =
-      Math.random()*1.5+"s";
-
-    piece.style.transform =
-      `rotate(${Math.random()*360}deg)`;
-
-    document.body.appendChild(piece);
+  showToast("🚌 HONK HONK! Adventure mode!");
+});
 
 
-    setTimeout(()=>{
-      piece.remove();
-    },4500);
+/* =====================================
+   DESTINATION INTERACTIONS
+===================================== */
+
+$("tambunCard").addEventListener("click",()=>{
+
+  showToast("💦 SPLASH! TAMBUN MODE!");
+
+});
+
+$("cameronCard").addEventListener("click",()=>{
+
+  showToast("🍓 STRAWBERRY MODE!");
+
+});
+
+
+/* =====================================
+   ADVENTURE PASS
+===================================== */
+
+$("passCard").addEventListener("click",()=>{
+
+  $("passCard").animate(
+    [
+      {transform:"scale(1) rotate(0deg)"},
+      {transform:"scale(1.025) rotate(-.5deg)"},
+      {transform:"scale(1) rotate(0deg)"}
+    ],
+    {
+      duration:450,
+      easing:"ease-out"
+    }
+  );
+
+  showToast("🎟️ ADVENTURE PASS ACTIVATED!");
+
+});
+
+
+/* =====================================
+   COMPLETION CONFETTI
+===================================== */
+
+let completionTriggered = false;
+
+function checkCompletion(){
+
+  const now = new Date();
+
+  if(
+    now >= tripEnd &&
+    !completionTriggered
+  ){
+
+    completionTriggered = true;
+
+    for(let i=0;i<55;i++){
+
+      const piece =
+        document.createElement("div");
+
+      piece.className = "confetti";
+
+      piece.style.left =
+        Math.random()*100+"vw";
+
+      piece.style.animationDelay =
+        Math.random()*1.5+"s";
+
+      piece.style.transform =
+        `rotate(${Math.random()*360}deg)`;
+
+      document.body.appendChild(piece);
+
+      setTimeout(()=>{
+        piece.remove();
+      },4500);
+
+    }
+
+    showToast("🏁 ADVENTURE COMPLETE! 🎉");
 
   }
-
 }
 
 
-/* =========================================
-   INTERACTIONS
-========================================= */
-
-document
-  .getElementById("bus")
-  .addEventListener(
-    "click",
-    ()=>{
-      showToast("HONK HONK! 🚌💨");
-    }
-  );
-
-
-document
-  .getElementById("tambunCard")
-  .addEventListener(
-    "click",
-    ()=>{
-      showToast(
-        "SPLASH! 💦 TAMBUN MODE"
-      );
-    }
-  );
-
-
-document
-  .getElementById("cameronCard")
-  .addEventListener(
-    "click",
-    ()=>{
-      showToast(
-        "STRAWBERRY MODE! 🍓"
-      );
-    }
-  );
-
-
-document
-  .getElementById("ticket")
-  .addEventListener(
-    "click",
-    ()=>{
-      showToast(
-        "🎟️ ADVENTURE PASS ACTIVATED!"
-      );
-    }
-  );
-
-
-/* =========================================
-   UPDATE EVERYTHING
-========================================= */
+/* =====================================
+   MASTER UPDATE
+===================================== */
 
 function updateAll(){
 
   updateCountdown();
+
+  updateHero();
 
   updateRoute();
 
@@ -2630,15 +2477,18 @@ function updateAll(){
 
   autoOpenCurrentDay();
 
+  checkCompletion();
+
 }
 
 
+/* =====================================
+   START
+===================================== */
+
 updateAll();
 
-setInterval(
-  updateAll,
-  1000
-);
+setInterval(updateAll,1000);
 
 </script>
 
