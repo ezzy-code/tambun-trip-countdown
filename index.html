@@ -142,12 +142,8 @@ h1 {
 }
 
 @keyframes ride {
-  from {
-    left: -80px;
-  }
-  to {
-    left: 100vw;
-  }
+  from { left: -80px; }
+  to { left: 100vw; }
 }
 
 .emoji {
@@ -159,31 +155,15 @@ h1 {
 }
 
 @keyframes fall {
-  from {
-    transform: translateY(-100px) rotate(0deg);
-  }
-  to {
-    transform: translateY(100vh) rotate(360deg);
-  }
+  from { transform: translateY(-100px) rotate(0deg); }
+  to { transform: translateY(100vh) rotate(360deg); }
 }
 
 @media (max-width: 420px) {
-  .card {
-    padding: 25px 12px;
-  }
-
-  .countdown {
-    gap: 5px;
-  }
-
-  .time-box {
-    padding: 10px 2px;
-  }
-
-  .fun {
-    font-size: 32px;
-    letter-spacing: 3px;
-  }
+  .card { padding: 25px 12px; }
+  .countdown { gap: 5px; }
+  .time-box { padding: 10px 2px; }
+  .fun { font-size: 32px; letter-spacing: 3px; }
 }
 </style>
 </head>
@@ -199,102 +179,74 @@ h1 {
 <div class="emoji" style="left:85%; animation-delay:2s;">🎈</div>
 
 <div class="container">
-
   <div class="card">
-
     <div class="small-title">🎢 FAMILY ADVENTURE 🎢</div>
-
     <h1>TAMBUN</h1>
-
-    <div class="subtitle">
-      🌴 TRIP COUNTDOWN 🌴
-    </div>
-
-    <div class="date">
-      📅 16 OCTOBER 2026 • 8:00 AM
-    </div>
+    <div class="subtitle">🌴 TRIP COUNTDOWN 🌴</div>
+    <div class="date">📅 16 OCTOBER 2026 • 8:00 AM</div>
 
     <div class="countdown">
-
       <div class="time-box">
-        <div class="number" id="days">00</div>
+        <div class="number" id="days">--</div>
         <div class="label">DAYS</div>
       </div>
-
       <div class="time-box">
-        <div class="number" id="hours">00</div>
+        <div class="number" id="hours">--</div>
         <div class="label">HOURS</div>
       </div>
-
       <div class="time-box">
-        <div class="number" id="minutes">00</div>
+        <div class="number" id="minutes">--</div>
         <div class="label">MINUTES</div>
       </div>
-
       <div class="time-box">
-        <div class="number" id="seconds">00</div>
+        <div class="number" id="seconds">--</div>
         <div class="label">SECONDS</div>
       </div>
-
     </div>
 
-    <div class="fun">
-      🚌 💦 🎢 🍔 🎉
-    </div>
-
-    <div class="message" id="message">
-      LET'S GET READY FOR THE ADVENTURE! 🚀
-    </div>
-
-    <div class="footer">
-      Made for the Tambun family trip ❤️
-    </div>
-
+    <div class="fun">🚌 💦 🎢 🍔 🎉</div>
+    <div class="message" id="message">LET'S GET READY FOR THE ADVENTURE! 🚀</div>
+    <div class="footer">Made for the Tambun family trip ❤️</div>
   </div>
-
 </div>
 
 <div class="ride">🎢</div>
 
 <script>
-// Target date: October 16, 2026 at 08:00:00 AM (GMT+8)
-const targetDate = new Date(Date.UTC(2026, 9, 16, 0, 0, 0)).getTime();
-
-function formatTwoDigits(num) {
-  return num < 10 ? `0${num}` : num;
-}
-
-const timerInterval = setInterval(updateCountdown, 1000);
+// Target: Oct 16, 2026, 08:00 AM Malaysia Time (GMT+8)
+const targetDate = new Date("2026-10-16T08:00:00+08:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
   const distance = targetDate - now;
+
+  if (isNaN(distance)) {
+    console.error("Invalid target date format");
+    return;
+  }
 
   if (distance <= 0) {
     document.getElementById("days").textContent = "00";
     document.getElementById("hours").textContent = "00";
     document.getElementById("minutes").textContent = "00";
     document.getElementById("seconds").textContent = "00";
-
-    document.getElementById("message").textContent =
-      "🎉 THE TAMBUN TRIP HAS STARTED! 🎉";
-
-    clearInterval(timerInterval);
+    document.getElementById("message").textContent = "🎉 THE TAMBUN TRIP HAS STARTED! 🎉";
     return;
   }
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("days").textContent = formatTwoDigits(days);
-  document.getElementById("hours").textContent = formatTwoDigits(hours);
-  document.getElementById("minutes").textContent = formatTwoDigits(minutes);
-  document.getElementById("seconds").textContent = formatTwoDigits(seconds);
+  document.getElementById("days").textContent = String(days).padStart(2, '0');
+  document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
 }
 
 updateCountdown();
+setInterval(updateCountdown, 1000);
 </script>
 
 </body>
